@@ -203,65 +203,6 @@ namespace benzi_v2
 
             }
         }
-        //private void HighValueUp(object sender, RoutedEventArgs e)
-        //{
-        //    if (U1Val <= 9000)
-        //    {
-        //        U1Val += 1000;
-
-        //        refresh_analogTEXT();
-        //    }
-        //}
-
-        //private void HighValueDown(object sender, RoutedEventArgs e)
-        //{
-        //    if (U1Val >= 1000)
-        //    {
-        //        U1Val -= 1000;
-
-        //        refresh_analogTEXT();
-
-        //    }
-        //}
-
-        //private void LowValueUp(object sender, RoutedEventArgs e)
-        //{
-        //    if (U1Val < 9900)
-        //    {
-        //        U1Val += 100;
-
-        //        refresh_analogTEXT();
-
-
-        //    }
-        //}
-
-        //private void LowValueDown(object sender, RoutedEventArgs e)
-        //{
-        //    if (U1Val >= 100)
-        //    {
-        //        U1Val -= 100;
-
-
-        //        refresh_analogTEXT();
-
-        //    }
-        //}
-
-        //private void gif10(object sender, RoutedEventArgs e)
-        //{
-
-        //    U1Val = 10000;
-        //    refresh_analogTEXT();
-
-        //}
-
-        //private void gif0(object sender, RoutedEventArgs e)
-        //{
-        //    U1Val = 0;
-        //    refresh_analogTEXT();
-
-        //}
 
         private void S0_button_TouchDown(object sender, TouchEventArgs e)
         {

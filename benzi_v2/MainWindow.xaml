@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:benzi_v2"
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1024" Closing="Window_Closing">
+        Title="Benzi" Height="768" Width="1024" Closing="Window_Closing">
     <Window.Resources>
         <Style x:Key="MyButtonA" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
