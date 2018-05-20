@@ -291,12 +291,14 @@ namespace benzi_v2
 
         private void S2_button_TouchDown(object sender, TouchEventArgs e)
         {
-
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 2));
         }
 
         private void S2_button_TouchUp(object sender, TouchEventArgs e)
         {
-
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 2));
         }
     }
 }
