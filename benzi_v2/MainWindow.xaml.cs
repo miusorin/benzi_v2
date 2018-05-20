@@ -119,7 +119,7 @@ namespace benzi_v2
         private void Window_Closing(object sender, CancelEventArgs e) //MUST be MANUALLY linked
         {
             MessageBoxResult result =
-                System.Windows.MessageBox.Show("Open menu ?", "Exit Confirmation",
+                System.Windows.MessageBox.Show("Iesire din aplicatie?", "Confirmare iesire",
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
@@ -133,7 +133,6 @@ namespace benzi_v2
             }
             if (result == MessageBoxResult.No)
             {
-
                 e.Cancel = true;
             }
         }
@@ -141,7 +140,6 @@ namespace benzi_v2
         public void Get_DO()
         {
             DO = modbusClient.ReadHoldingRegisters(2080, 1)[0];
-
 
         }
 
