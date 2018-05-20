@@ -18,7 +18,6 @@ using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Media.Animation;
-
 using Modbus.Device;
 using System.IO.Ports;
 
