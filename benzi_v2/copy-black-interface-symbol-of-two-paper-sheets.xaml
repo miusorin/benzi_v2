@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is NOT compatible with Silverlight-->
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+  <Canvas Name="Capa_1" Width="748" Height="748" Canvas.Left="0" Canvas.Top="0">
+    <Canvas.RenderTransform>
+      <TranslateTransform X="0" Y="0"/>
+    </Canvas.RenderTransform>
+    <Canvas.Resources/>
+    <!--Unknown tag: metadata-->
+    <!--Unknown tag: sodipodi:namedview-->
+    <Canvas Name="g4137">
+      <Canvas Name="g4139">
+        <Polygon xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Points="680,646 680,0 170,0 170,68 612,68 612,646   " Name="polygon4141" FillRule="NonZero" Fill="#000000"/>
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path4143" Fill="#000000">
+          <Path.Data>
+            <PathGeometry Figures="M68 109.14v631.72c0 3.943 3.128 7.14 7.004 7.14h495.958c3.91 0 7.038-3.162 7.038-7.14V109.14    c0-3.944-3.128-7.14-7.004-7.14H75.004C71.128 102 68 105.162 68 109.14z M136 204h374v34H136V204z M136 306h374v34H136V306z     M136 408h374v34H136V408z M136 510h374v34H136V510z M136 612h238v34H136V612z" FillRule="NonZero"/>
+          </Path.Data>
+        </Path>
+      </Canvas>
+    </Canvas>
+    <Canvas Name="g4145"/>
+    <Canvas Name="g4147"/>
+    <Canvas Name="g4149"/>
+    <Canvas Name="g4151"/>
+    <Canvas Name="g4153"/>
+    <Canvas Name="g4155"/>
+    <Canvas Name="g4157"/>
+    <Canvas Name="g4159"/>
+    <Canvas Name="g4161"/>
+    <Canvas Name="g4163"/>
+    <Canvas Name="g4165"/>
+    <Canvas Name="g4167"/>
+    <Canvas Name="g4169"/>
+    <Canvas Name="g4171"/>
+    <Canvas Name="g4173"/>
+  </Canvas>
+</Viewbox>

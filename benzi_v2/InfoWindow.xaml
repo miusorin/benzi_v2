@@ -1,0 +1,164 @@
+﻿<Window x:Class="benzi_v2.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:benzi_v2"
+        mc:Ignorable="d"
+        Title="InfoWindow" Height="614" Width="649.333" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="White" BorderBrush="Black" BorderThickness="5"  WindowStyle="None" Deactivated="Window_Deactivated" Topmost="True" >
+    <Window.Resources>
+        <Style x:Key="HomeButton" TargetType="{x:Type Button}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                            <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" Stretch="Uniform">
+                                <Canvas x:Name="Capa_1" Width="460.298" Height="460.297" Canvas.Left="0" Canvas.Top="0">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </Canvas.RenderTransform>
+                                    <!--Unknown tag: metadata-->
+                                    <!--Unknown tag: sodipodi:namedview-->
+                                    <Canvas x:Name="g7952">
+                                        <Canvas x:Name="g7954">
+                                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path7956" Fill="#000000" Data="M230.14956,73.945001 L65.986557,209.28 C65.986557,209.471 65.938557,209.752 65.842557,210.135 65.748557,210.515 65.698557,210.791 65.698557,210.987 L65.698557,348.028 C65.698557,352.976 67.507557,357.264 71.124557,360.875 74.740557,364.488 79.022557,366.306 83.971557,366.306 L193.60156,366.306 193.60156,256.67 266.69856,256.67 266.69856,366.31 376.32756,366.31 C381.27556,366.31 385.56356,364.496 389.17456,360.875 392.79156,357.268 394.60656,352.977 394.60656,348.028 L394.60656,210.987 C394.60656,210.227 394.50256,209.653 394.31856,209.28 L230.14956,73.945001 z M457.12256,178.444 L394.60056,126.482 394.60056,9.9950005 C394.60056,7.3320005 393.74456,5.1420005 392.02656,3.4280005 390.32256,1.7160005 388.13256,0.86000052 385.46356,0.86000052 L330.64756,0.86000052 C327.98156,0.86000052 325.79256,1.7160005 324.07756,3.4280005 322.36656,5.1420005 321.51156,7.3330005 321.51156,9.9950005 L321.51156,65.668001 251.84956,7.4230005 C245.76556,2.4740005 238.53156,5.1879884E-07 230.15556,5.1879884E-07 221.78056,5.1879884E-07 214.54756,2.4740005 208.45756,7.4230005 L3.1725575,178.444 C1.2695575,179.964 0.22655747,182.01 0.032557468,184.58 -0.16044253,187.148 0.50455747,189.391 2.0295575,191.293 L19.730557,212.421 C21.255557,214.133 23.251557,215.18 25.726557,215.563 28.011557,215.755 30.296557,215.087 32.581557,213.565 L230.14956,48.823001 427.71956,213.564 C429.24556,214.892 431.24056,215.555 433.71556,215.555 L434.57356,215.555 C437.04456,215.179 439.03656,214.125 440.56956,212.417 L458.27256,191.292 C459.79456,189.386 460.46156,187.147 460.26356,184.576 460.06856,182.013 459.02156,179.967 457.12256,178.444 z" Height="366.31" Canvas.Left="-0.001" Stretch="Fill" Canvas.Top="46.994" Width="460.298"/>
+                                        </Canvas>
+                                    </Canvas>
+                                    <Canvas x:Name="g7960"/>
+                                    <Canvas x:Name="g7962"/>
+                                    <Canvas x:Name="g7964"/>
+                                    <Canvas x:Name="g7966"/>
+                                    <Canvas x:Name="g7968"/>
+                                    <Canvas x:Name="g7970"/>
+                                    <Canvas x:Name="g7972"/>
+                                    <Canvas x:Name="g7974"/>
+                                    <Canvas x:Name="g7976"/>
+                                    <Canvas x:Name="g7978"/>
+                                    <Canvas x:Name="g7980"/>
+                                    <Canvas x:Name="g7982"/>
+                                    <Canvas x:Name="g7984"/>
+                                    <Canvas x:Name="g7986"/>
+                                    <Canvas x:Name="g7988"/>
+                                </Canvas>
+                            </Viewbox>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Viewbox>
+        <StackPanel Margin="0,0,0,-8" Height="361" Width="355.533">
+            <TabControl x:Name="tabControl" Height="312.544" Width="346.781" Margin="4.376,8,4.376,0" >
+                <TabItem x:Name="Prezentare" Header="Overview
+">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                            <GradientStop Color="#FFE6E6E6" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+                    <Grid Background="White">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="113*"/>
+                            <ColumnDefinition Width="228*"/>
+                        </Grid.ColumnDefinitions>
+                        <RichTextBox x:Name="richTextBox" IsReadOnly="True"  Background="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+         ScrollViewer.VerticalScrollBarVisibility="Auto"
+         ScrollViewer.CanContentScroll="True" BorderBrush="{x:Null}" BorderThickness="0,0,0,1" Grid.ColumnSpan="2" >
+                            <RichTextBox.Resources>
+                                <Style TargetType="{x:Type ScrollBar}">
+                                    <Setter Property="Width" Value="25"/>
+
+                                </Style>
+                            </RichTextBox.Resources>
+                            <FlowDocument>
+                                <Paragraph>
+                                    <Run FontWeight="Bold" FontSize="20" Text="Placeholder Title"/>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Run FontWeight="Bold" Text="Placeholder Subtitle"/>
+                                    <Run FontWeight="Bold" Text=":"/>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Run Text="Placeholder Content"/>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Run FontWeight="Bold" Text=""/>
+                                </Paragraph>
+                                <Paragraph LineHeight="6">
+                                    <Run FontStretch="Expanded"/>
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Signals' Adresses">
+                    <Grid Background="White">
+                        <RichTextBox x:Name="richTextBox_Copy" IsReadOnly="True"  Background="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            ScrollViewer.VerticalScrollBarVisibility="Auto"
+                            ScrollViewer.CanContentScroll="True" BorderBrush="{x:Null}" BorderThickness="0,0,0,1"  >
+                            <RichTextBox.Resources>
+                                <Style TargetType="{x:Type ScrollBar}">
+                                    <Setter Property="Width" Value="25"/>
+
+                                </Style>
+                            </RichTextBox.Resources>
+                            <FlowDocument>
+                                <Paragraph LineHeight="6">
+                                    <Run FontStretch="Expanded"/>
+                                </Paragraph>
+                                <Paragraph LineHeight="6">
+                                    <Run FontWeight="Bold" FontStretch="Expanded" FontSize="20" Text="Placeholder Title"/>
+                                </Paragraph>
+                                <Paragraph LineHeight="6">
+                                    <Run FontStretch="Expanded"/>
+                                </Paragraph>
+                                <Paragraph LineHeight="1">
+                                    <Run FontStretch="Expanded" Text="Placeholder Content"/>
+                                    <Run FontStretch="Expanded" Text="&#x9;    "/>
+                                </Paragraph>
+                                <Paragraph LineHeight="6">
+                                    <Run FontStretch="Expanded"/>
+                                </Paragraph>
+                                <Paragraph LineHeight="6">
+                                    <Run FontStretch="Expanded"/>
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="About" >
+                    <Grid>
+                        <Button x:Name="button" Style="{StaticResource HomeButton}"  Content="Button" Height="100" Width="75" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" />
+                        <TextBlock x:Name="textBlock" Height="23.377" Margin="90,50.432,68.437,0" TextWrapping="Wrap" Text="Back to Menu" VerticalAlignment="Top" FontSize="18"/>
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <Button Content="OK" Width="68" Height="25" Click="Button_Click" BorderBrush="{x:Null}" Background="#FFAEAEAE">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+        </StackPanel>
+    </Viewbox>
+</Window>
