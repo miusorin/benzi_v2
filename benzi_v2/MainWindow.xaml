@@ -345,6 +345,7 @@
                         </Grid>
                     </Grid>
                 </Viewbox>
+                <Button x:Name="S3_button" Content="S3" Canvas.Left="34" Style="{DynamicResource MyButton}" Canvas.Top="265" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDDDDDD" BorderBrush="#4C000000" TouchDown="S3_button_TouchDown" TouchUp="S3_button_TouchUp" Click="S3_button_Click"/>
 
             </Canvas>
             <Image x:Name="Sigla" Height="63.176" VerticalAlignment="Bottom" Source="sigla_astiBETTER.png" HorizontalAlignment="Left" Width="151.799" Margin="10,0,0,10"/>

@@ -238,5 +238,17 @@ namespace benzi_v2
             Get_DO();
             modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 2));
         }
+
+        private void S3_button_TouchDown(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 2));
+        }
+
+        private void S3_button_TouchUp(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 2));
+        }
     }
 }
