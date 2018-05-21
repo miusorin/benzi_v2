@@ -242,13 +242,73 @@ namespace benzi_v2
         private void S3_button_TouchDown(object sender, TouchEventArgs e)
         {
             Get_DO();
-            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 2));
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 3));
         }
 
         private void S3_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 2));
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 3));
+        }
+
+        private void S4_button_TouchDown(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 4));
+        }
+
+        private void S4_button_TouchUp(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 4));
+        }
+
+        private void S5_button_TouchDown(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 5));
+        }
+
+        private void S5_button_TouchUp(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 5));
+        }
+
+        private void S6_button_TouchDown(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 6));
+        }
+
+        private void S6_button_TouchUp(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 6));
+        }
+
+        private void S7_button_TouchDown(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 7));
+        }
+
+        private void S7_button_TouchUp(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 7));
+        }
+
+        private void S8_button_TouchDown(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 8));
+        }
+
+        private void S8_button_TouchUp(object sender, TouchEventArgs e)
+        {
+            Get_DO();
+            modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 8));
         }
     }
 }
