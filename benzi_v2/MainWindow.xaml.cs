@@ -310,5 +310,15 @@ namespace benzi_v2
             Get_DO();
             modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 8));
         }
+
+        private void S8_button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void S8_button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
