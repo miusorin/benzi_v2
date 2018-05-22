@@ -67,7 +67,7 @@ namespace benzi_v2
         public ushort SHJ_analog_outputReg = 110;
         public ushort SHJ_analog_inputReg = 100;//MAX = 4095 = 10 V
         public IModbusSerialMaster modbus_master;//Functional Variables <
-
+        private object modbus_master_serial;
 
         public MainWindow()
         {
