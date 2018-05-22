@@ -304,47 +304,6 @@
                 <Path x:Name="LampaH1" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="White" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="115.078" Width="30.568" Canvas.Left="-1.352"/>
                 <TextBlock x:Name="textBlock1_Copy5" Height="25.903" TextWrapping="Wrap" Width="33.919" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" RenderTransformOrigin="0.515,0.341" Canvas.Top="119.743" Text="H1" Canvas.Left="-40.271"/>
                 <Button x:Name="S2_button" Content="S2" Canvas.Left="34.216" Style="{DynamicResource MyButton}" Canvas.Top="170" Width="75.001" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDDDDDD" BorderBrush="#4C000000" TouchDown="S2_button_TouchDown" TouchUp="S2_button_TouchUp"/>
-                <Viewbox Height="126" Canvas.Left="-2" Stretch="Fill" Canvas.Top="518" Width="210" d:IsHidden="True">
-                    <Grid Height="63" Width="90" d:IsHidden="True">
-                        <Grid>
-                            <TextBlock x:Name="HighVValue" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="25" Width="25" FontSize="20" TextAlignment="Right" Margin="32,22.336,0,0" FontFamily="Siemens AD Sans"/>
-                            <TextBlock x:Name="DotDot" HorizontalAlignment="Left" TextWrapping="Wrap" Text="." VerticalAlignment="Top" Height="24" Width="6" FontSize="20" Margin="56,23.336,0,0" FontFamily="Siemens AD Sans"/>
-                            <TextBlock x:Name="LowVValue" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="21" FontSize="20" HorizontalAlignment="Left" Width="15" Margin="62,22,0,0" FontFamily="Siemens AD Sans"/>
-                            <TextBlock x:Name="LowVValue_Copy" TextWrapping="Wrap" Text="V" VerticalAlignment="Top" Height="24" FontSize="20" HorizontalAlignment="Left" Width="15" Margin="75,22.336,0,0" FontFamily="Siemens AD Sans"/>
-                            <!--<Button x:Name="HighValueButtonUp_Copy" Style="{StaticResource MyButtonA}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="25" Height="20" Background="#FFB9B9B9" Click="gif10" Content="10V" Margin="10,0,0,0" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" FontFamily="Siemens AD Sans"/>
-                            <Button x:Name="HighValueButtonUp_Copy1" Style="{StaticResource MyButtonA}" HorizontalAlignment="Left" Width="25" Background="#FFB9B9B9" Click="gif0" Content="0V" Height="20" Margin="10,0,0,0" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment" FontFamily="Siemens AD Sans"/>-->
-                            <TextBlock x:Name="HighVValue_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="U1:" VerticalAlignment="Top" Height="25" Width="39" FontSize="20" TextAlignment="Right" Margin="-4,22.336,0,0" d:LayoutOverrides="HorizontalAlignment" FontFamily="Siemens AD Sans"/>
-                        </Grid>
-                        <Grid Margin="43,2,4,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="18*"/>
-                                <RowDefinition Height="43*"/>
-                            </Grid.RowDefinitions>
-                            <Button x:Name="LowValueButtonUp" Style="{StaticResource MyAnalogButton}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" Height="20" Background="#FFB9B9B9" Click="LowValueUp" Margin="23,-2,0,0"/>
-                            <Button x:Name="LowValueButtonDown" Style="{StaticResource MyAnalogButtonDown }" HorizontalAlignment="Left" Width="20" Background="#FFB9B9B9" RenderTransformOrigin="0.5,0.5" Click="LowValueDown" Height="20" Margin="23,0,0,0" VerticalAlignment="Bottom" Grid.Row="1">
-                                <Button.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform Angle="360"/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </Button.RenderTransform>
-                            </Button>
-                            <Button x:Name="HighValueButtonUp1" Style="{StaticResource MyAnalogButton}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" Height="20" Background="#FFB9B9B9" Click="HighValueUp" d:LayoutOverrides="HorizontalAlignment" Margin="-2,-2,0,0"/>
-                            <Button  x:Name="HighValueButtonDown" Style="{StaticResource MyAnalogButtonDown}" HorizontalAlignment="Left" Width="20" Background="#FFB9B9B9" RenderTransformOrigin="0.5,0.5" Click="HighValueDown" Height="20" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment" Grid.Row="1" Margin="-2,0,0,0">
-                                <Button.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform Angle="360"/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </Button.RenderTransform>
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </Viewbox>
                 <Button x:Name="S3_button" Content="S3" Canvas.Left="34" Style="{DynamicResource MyButton}" Canvas.Top="250" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDDDDDD" BorderBrush="#4C000000" TouchDown="S3_button_TouchDown" TouchUp="S3_button_TouchUp" Click="S3_button_Click"/>
                 <Button x:Name="S4_button" Content="S4" Canvas.Left="34" Style="{DynamicResource MyButton}" Canvas.Top="413" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDDDDDD" BorderBrush="#4C000000" TouchDown="S4_button_TouchDown" TouchUp="S4_button_TouchUp" Click="S4_button_Click"/>
                 <Button x:Name="S5_button" Content="S5" Canvas.Left="114" Style="{DynamicResource MyButton}" Canvas.Top="413" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDDDDDD" BorderBrush="#4C000000" TouchDown="S5_button_TouchDown" TouchUp="S5_button_TouchUp" Click="S5_button_Click"/>
