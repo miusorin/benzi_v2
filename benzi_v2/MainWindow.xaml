@@ -353,7 +353,6 @@
                 <Button x:Name="S8_button" Content="S8" Canvas.Left="114" Style="{DynamicResource MyButton}" Canvas.Top="250" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDDDDDD" BorderBrush="#4C000000" TouchDown="S8_button_TouchDown" TouchUp="S8_button_TouchUp" Click="S8_button_Click"/>
 
             </Canvas>
-            <Image x:Name="Sigla" Height="63.176" VerticalAlignment="Bottom" Source="sigla_astiBETTER.png" HorizontalAlignment="Left" Width="151.799" Margin="10,0,0,10"/>
             <Button x:Name="HomeButton" Content="" Style="{DynamicResource HomeButton}" VerticalAlignment="Bottom" Width="65.434" Background="Black" Height="65.434" BorderBrush="#FFBB5353" Click="button_Click" Margin="0,0,36.638,10" HorizontalAlignment="Right"/>
             <TextBlock x:Name="Titlu" Height="43.547" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="36" TextAlignment="Center" Background="White" Margin="10,10,335.452,0" VerticalAlignment="Top">
                 <TextBlock.Effect>
