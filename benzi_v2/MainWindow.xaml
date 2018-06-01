@@ -1,26 +1,27 @@
-﻿<Window x:Class="benzi_v2.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:benzi_v2"
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="benzi_v2.MainWindow"
         mc:Ignorable="d"
         Title="Miu Sorin-Cristian | MS11" Height="768" Width="1024" Closing="Window_Closing">
     <Window.Resources>
-        <Style x:Key="MyButtonA" TargetType="Button">
+        <Style x:Key="MyButtonA" TargetType="{x:Type Button}">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Background" Value="#FFDDDDDD"/>
-            <Setter Property="Button.Effect">
+            <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="0" Opacity="0.5" />
                 </Setter.Value>
             </Setter>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Name="border" BorderThickness="0"  BorderBrush="Black" Background="{TemplateBinding Background}">
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderThickness="0"  BorderBrush="Black" Background="{TemplateBinding Background}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
 
@@ -37,21 +38,21 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="MyAnalogButton" TargetType="Button">
+        <Style x:Key="MyAnalogButton" TargetType="{x:Type Button}">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Background" Value="#FFDDDDDD"/>
-            <Setter Property="Button.Effect">
+            <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="0" Opacity="0.5" />
                 </Setter.Value>
             </Setter>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate TargetType="{x:Type Button}">
 
                         <Grid>
-                            <Border Name="border" BorderThickness="0"  BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <Border x:Name="border" BorderThickness="0"  BorderBrush="Black" Background="{TemplateBinding Background}">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                             <ed:RegularPolygon Fill="#FFF4F4F5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="15" Width="15" InnerRadius="1"  PointCount="3" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="1"  />
@@ -71,21 +72,21 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="MyAnalogButtonDown" TargetType="Button">
+        <Style x:Key="MyAnalogButtonDown" TargetType="{x:Type Button}">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Background" Value="#FFDDDDDD"/>
-            <Setter Property="Button.Effect">
+            <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="0" Opacity="0.5" />
                 </Setter.Value>
             </Setter>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate TargetType="{x:Type Button}">
 
                         <Grid>
-                            <Border Name="border" BorderThickness="0"  BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <Border x:Name="border" BorderThickness="0"  BorderBrush="Black" Background="{TemplateBinding Background}">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                             <ed:RegularPolygon Fill="#FFF4F4F5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="15" Width="15" InnerRadius="1"  PointCount="3" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="1" RenderTransformOrigin="0.5,0.5"  >
@@ -282,7 +283,20 @@
             </Setter>
         </Style>
         <Storyboard x:Key="OnTouchUp1"/>
+        <Storyboard x:Key="Movellipse" AutoReverse="True">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-213.623"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="93.786"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Movellipse}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Window.Effect >
 
         <BlurEffect x:Name="blurEffect" x:FieldModifier="public" RenderingBias="Quality" Radius="0" />
@@ -298,12 +312,6 @@
                 </TransformGroup>
             </Grid.RenderTransform>
             <!--<Image x:Name="SchitaPlansa" Source="pack://siteoforigin:,,,/Resources/PlaceholderImage.bmp" d:IsHidden="True"/>-->
-
-            <!--<Canvas x:Name="Schema" Margin="0,58.547,198,10">
-                <Path Data="M0,0 L810.708,584.453" Height="585.453" Stretch="Fill" Stroke="Red" Width="811.708" StrokeThickness="20" d:IsHidden="True"/>
-                <Path Data="M810.708,0 L9.9475983E-14,594.453" Height="595.453" Stretch="Fill" Stroke="Red" Width="811.708" StrokeThickness="20" d:IsHidden="True"/>
-            </Canvas>-->
-
             <!--<Canvas x:Name="Schema" Margin="0,58.547,198,10">
                 <Path Data="M0,0 L810.708,584.453" Height="585.453" Stretch="Fill" Stroke="Red" Width="811.708" StrokeThickness="20" d:IsHidden="True"/>
                 <Path Data="M810.708,0 L9.9475983E-14,594.453" Height="595.453" Stretch="Fill" Stroke="Red" Width="811.708" StrokeThickness="20" d:IsHidden="True"/>
@@ -341,6 +349,16 @@
                 </TextBlock.Effect></TextBlock>
             <Button x:Name="INFO_button" Style="{StaticResource ResourceKey=InfoButton}" Content="Button" HorizontalAlignment="Left" Margin="863.722,0,0,10" VerticalAlignment="Bottom" Width="65.434" Height="65.434" BorderBrush="Black" Foreground="Black" FontFamily="Siemens Slab Black" FontSize="72" Click="INFO_button_Click"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Height="51.984" Margin="0,19.143,10,0" TextWrapping="Wrap" Text="Stop Sistem" VerticalAlignment="Top" Width="77.072" FontSize="20" FontWeight="Bold" TextAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin"/>
+            <Ellipse x:Name="ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Margin="93.785,0,0,236.548" Stroke="Black" Width="291.778" Height="130.258" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
 
         </Grid>
 
