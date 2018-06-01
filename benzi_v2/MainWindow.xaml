@@ -281,25 +281,39 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Storyboard x:Key="OnTouchUp1"/>
     </Window.Resources>
     <Window.Effect >
 
         <BlurEffect x:Name="blurEffect" x:FieldModifier="public" RenderingBias="Quality" Radius="0" />
     </Window.Effect>
     <Viewbox Stretch="Uniform">
-        <Grid Height="768" Width="1024">
-            <Image x:Name="SchitaPlansa" Source="pack://siteoforigin:,,,/Resources/PlaceholderImage.bmp" d:IsHidden="True"/>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="States">
+                <VisualState x:Name="Normal"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid x:Name="grid" Height="768" Width="1024" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <!--<Image x:Name="SchitaPlansa" Source="pack://siteoforigin:,,,/Resources/PlaceholderImage.bmp" d:IsHidden="True"/>-->
 
-            <Canvas x:Name="Schema" Margin="0,58.547,213.292,115">
+            <!--<Canvas x:Name="Schema" Margin="0,58.547,198,10">
                 <Path Data="M0,0 L810.708,584.453" Height="585.453" Stretch="Fill" Stroke="Red" Width="811.708" StrokeThickness="20" d:IsHidden="True"/>
                 <Path Data="M810.708,0 L9.9475983E-14,594.453" Height="595.453" Stretch="Fill" Stroke="Red" Width="811.708" StrokeThickness="20" d:IsHidden="True"/>
-            </Canvas>
+            </Canvas>-->
             <Canvas x:Name="Control" HorizontalAlignment="Right" Width="193">
-                <Path Data="M208.292,0 L10,768" Fill="#FFF4F4F5" Height="788" Stretch="Fill" Stroke="#FF8BFF00" StrokeThickness="20" Canvas.Top="-10" Width="218.292" d:IsHidden="True"/>
-                <Path Data="M10,0 L198.292,758" Fill="#FFF4F4F5" Height="778" Stretch="Fill" Stroke="#FF8BFF00" StrokeThickness="20" Canvas.Top="-10" Width="208.292" d:IsHidden="True"/>
-                <Button x:Name="S0_button" Content="S0" Canvas.Left="34.216" Style="{DynamicResource MyButton}" Canvas.Top="10" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="Red" BorderBrush="#4CC50A0A" TouchDown="S0_button_TouchDown" TouchUp="S0_button_TouchUp"/>
+                <!--<Path Data="M208.292,0 L10,768" Fill="#FFF4F4F5" Height="788" Stretch="Fill" Stroke="#FF8BFF00" StrokeThickness="20" Canvas.Top="-10" Width="218.292" d:IsHidden="True"/>
+                <Path Data="M10,0 L198.292,758" Fill="#FFF4F4F5" Height="778" Stretch="Fill" Stroke="#FF8BFF00" StrokeThickness="20" Canvas.Top="-10" Width="208.292" d:IsHidden="True"/>-->
+                <Button x:Name="S0_button" Content="S0" Canvas.Left="74.856" Style="{DynamicResource MyButton}" Canvas.Top="15" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="Red" BorderBrush="#4CC50A0A" TouchDown="S0_button_TouchDown" TouchUp="S0_button_TouchUp"/>
                 <!--<TextBlock x:Name="textBlock1_Copy3" Height="25.903" TextWrapping="Wrap" Text="OFF" Width="36.842" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" Canvas.Left="121.154" Canvas.Top="39.743"/>-->
-                <Button x:Name="S1_button" Content="S1" Canvas.Left="34.216" Style="{DynamicResource MyButton}" Canvas.Top="90" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FF46FF00" BorderBrush="#4C2B9E00" TouchDown="S1_button_TouchDown" TouchUp="S1_button_TouchUp"/>
+                <Button x:Name="S1_button" Content="S1" Canvas.Left="34.216" Style="{DynamicResource MyButton}" Canvas.Top="90" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S1_button_TouchDown" TouchUp="S1_button_TouchUp" IsManipulationEnabled="True"/>
                 <!--<TextBlock x:Name="textBlock1_Copy4" Height="26" TextWrapping="Wrap" Width="28" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" Canvas.Left="-2" Canvas.Top="151"><Run Text="ON"/><LineBreak/><Run/></TextBlock>-->
                 <!--<Path x:Name="LampaH1" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="White" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="115.078" Width="30.568" Canvas.Left="-1.352"/>-->
                 <!--<TextBlock x:Name="textBlock1_Copy5" Height="25.903" TextWrapping="Wrap" Width="33.919" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" RenderTransformOrigin="0.515,0.341" Canvas.Top="119.743" Text="H1" Canvas.Left="-40.271"/>-->
@@ -312,12 +326,20 @@
                 <Button x:Name="S8_button" Content="S8" Canvas.Left="114" Style="{DynamicResource MyButton}" Canvas.Top="250" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDDDDDD" BorderBrush="#4C000000" TouchDown="S8_button_TouchDown" TouchUp="S8_button_TouchUp"/>
 
             </Canvas>
-            <Button x:Name="HomeButton" Content="" Style="{DynamicResource HomeButton}" VerticalAlignment="Bottom" Width="65.434" Background="Black" Height="65.434" BorderBrush="#FFBB5353" Click="button_Click" Margin="0,0,36.638,10" HorizontalAlignment="Right"/>
-            <TextBlock x:Name="Titlu" Height="43.547" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="36" TextAlignment="Center" Background="White" Margin="10,10,335.452,0" VerticalAlignment="Top">
+            <Button x:Name="HomeButton" Content="" Style="{DynamicResource HomeButton}" VerticalAlignment="Bottom" Width="65.434" Background="Black" Height="65.434" BorderBrush="#FFBB5353" Click="button_Click" Margin="0,0,21.638,10" HorizontalAlignment="Right"/>
+            <TextBlock x:Name="Titlu" Height="43.547" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="36" TextAlignment="Center" Background="White" Margin="0,10,208,0" VerticalAlignment="Top" Text="Sistem de simulare pentru conducerea proceselor energetice" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
                 <TextBlock.Effect>
                     <DropShadowEffect ShadowDepth="10                                       " />
-                </TextBlock.Effect><Run Text="Benzi"/></TextBlock>
-            <Button x:Name="INFO_button" Style="{StaticResource ResourceKey=InfoButton}" Content="Button" HorizontalAlignment="Left" Margin="853.222,0,0,10" VerticalAlignment="Bottom" Width="65.434" Height="65.434" BorderBrush="Black" Foreground="Black" FontFamily="Siemens Slab Black" FontSize="72" Click="INFO_button_Click"/>
+                </TextBlock.Effect></TextBlock>
+            <Button x:Name="INFO_button" Style="{StaticResource ResourceKey=InfoButton}" Content="Button" HorizontalAlignment="Left" Margin="863.722,0,0,10" VerticalAlignment="Bottom" Width="65.434" Height="65.434" BorderBrush="Black" Foreground="Black" FontFamily="Siemens Slab Black" FontSize="72" Click="INFO_button_Click"/>
 
         </Grid>
 
