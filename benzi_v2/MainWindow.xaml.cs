@@ -183,7 +183,10 @@ namespace benzi_v2
 
         }
 
+
         public void AnimationControl() { }
+
+        //private int rnd = random.Next(1, 3);
 
         private void button_Click(object sender, RoutedEventArgs e)//HomeButtonClick
         {
@@ -265,6 +268,8 @@ namespace benzi_v2
 
         private void S5_button_TouchDown(object sender, TouchEventArgs e)
         {
+            Random r = new Random();
+            int rInt = r.Next(0, 100);
             Get_DO();
             //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 5));
             

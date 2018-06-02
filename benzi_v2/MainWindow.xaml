@@ -282,16 +282,19 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Storyboard x:Key="ExpandGrid">
-
-            <DoubleAnimation Duration="00:00:20" From="1" To="450" Storyboard.TargetProperty="(Canvas.Width)" Storyboard.TargetName="cnv"/>
-
-        </Storyboard>
+        <!--<Storyboard x:Name="Conveyor1" x:Key="Conveyor">
+            <DoubleAnimation Storyboard.TargetName="xform"
+                            Storyboard.TargetProperty="X"
+                            From="0" To="1000"
+                            Duration="00:00:10"
+                            RepeatBehavior="Forever" />
+        </Storyboard>-->
     </Window.Resources>
     <Window.Effect >
 
         <BlurEffect x:Name="blurEffect" x:FieldModifier="public" RenderingBias="Quality" Radius="0" />
     </Window.Effect>
+
     <Viewbox Stretch="Uniform">
         <Grid x:Name="grid" Height="768" Width="1024" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
@@ -302,26 +305,30 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Grid.RenderTransform>
-            <!--<Image x:Name="SchitaPlansa" Source="pack://siteoforigin:,,,/Resources/PlaceholderImage.bmp" d:IsHidden="True"/>-->
-            <!--<Canvas x:Name="Schema" Margin="0,58.547,198,10">
-                <Path Data="M0,0 L810.708,584.453" Height="585.453" Stretch="Fill" Stroke="Red" Width="811.708" StrokeThickness="20" d:IsHidden="True"/>
-                <Path Data="M810.708,0 L9.9475983E-14,594.453" Height="595.453" Stretch="Fill" Stroke="Red" Width="811.708" StrokeThickness="20" d:IsHidden="True"/>
-            </Canvas>-->
+            <Grid.Triggers>
+                <EventTrigger SourceName="S1_button" RoutedEvent="Button.Click">
+                    <BeginStoryboard Name="Conveyor">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="xform"
+                            Storyboard.TargetProperty="X"
+                            From="0" To="1000"
+                            Duration="00:00:10"
+                            RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger SourceName="S6_button" RoutedEvent="Button.Click">
+                    <StopStoryboard BeginStoryboardName="Conveyor" />
+                </EventTrigger>
+            </Grid.Triggers>
             <Canvas x:Name="Control" HorizontalAlignment="Right" Width="263.339" Margin="0,0,-17.626,0">
                 <!--<TextBlock x:Name="textBlock1_Copy4" Height="26" TextWrapping="Wrap" Width="28" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" Canvas.Left="-2" Canvas.Top="151"><Run Text="ON"/><LineBreak/><Run/></TextBlock>-->
                 <!--<Path x:Name="LampaH1" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="White" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="115.078" Width="30.568" Canvas.Left="-1.352"/>-->
                 <!--<Path Data="M208.292,0 L10,768" Fill="#FFF4F4F5" Height="788" Stretch="Fill" Stroke="#FF8BFF00" StrokeThickness="20" Canvas.Top="-10" Width="218.292" d:IsHidden="True"/>
                 <Path Data="M10,0 L198.292,758" Fill="#FFF4F4F5" Height="778" Stretch="Fill" Stroke="#FF8BFF00" StrokeThickness="20" Canvas.Top="-10" Width="208.292" d:IsHidden="True"/>-->
-                <Button x:Name="S0_button" Content="S0" Canvas.Left="74.856" Style="{DynamicResource MyButton}" Canvas.Top="10.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="Red" BorderBrush="#4CC50A0A" TouchDown="S0_button_TouchDown" TouchUp="S0_button_TouchUp">
-                    <Button.Triggers>
-                        <EventTrigger RoutedEvent="Button.Click" >
-                            <BeginStoryboard  Storyboard="{StaticResource ExpandGrid}">
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Button.Triggers>
-                </Button>
+                <Button x:Name="S0_button" Content="S0" Canvas.Left="74.856" Style="{DynamicResource MyButton}" Canvas.Top="10.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="Red" BorderBrush="#4CC50A0A" TouchDown="S0_button_TouchDown" TouchUp="S0_button_TouchUp"/>
                 <!--<TextBlock x:Name="textBlock1_Copy3" Height="25.903" TextWrapping="Wrap" Text="OFF" Width="36.842" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" Canvas.Left="121.154" Canvas.Top="39.743"/>-->
-                <Button x:Name="S1_button" Content="S1" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="104" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S1_button_TouchDown" TouchUp="S1_button_TouchUp" IsManipulationEnabled="True"/>
+                <Button x:Name="S1_button" Content="S1" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="104" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S1_button_TouchDown" TouchUp="S1_button_TouchUp"/>
                 <!--<TextBlock x:Name="textBlock1_Copy5" Height="25.903" TextWrapping="Wrap" Width="33.919" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" RenderTransformOrigin="0.515,0.341" Canvas.Top="119.743" Text="H1" Canvas.Left="-40.271"/>-->
                 <Button x:Name="S2_button" Content="S2" Canvas.Left="9.999" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75.001" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S2_button_TouchDown" TouchUp="S2_button_TouchUp"/>
                 <Button x:Name="S3_button" Content="S3" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S3_button_TouchDown" TouchUp="S3_button_TouchUp"/>
@@ -343,19 +350,46 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
                 <TextBlock.Effect>
-                    <DropShadowEffect ShadowDepth="10                                       " />
+                    <DropShadowEffect ShadowDepth="10" />
                 </TextBlock.Effect></TextBlock>
             <Button x:Name="INFO_button" Style="{StaticResource ResourceKey=InfoButton}" Content="Button" HorizontalAlignment="Left" Margin="863.722,0,0,10" VerticalAlignment="Bottom" Width="65.434" Height="65.434" BorderBrush="Black" Foreground="Black" FontFamily="Siemens Slab Black" FontSize="72" Click="INFO_button_Click"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Height="51.984" Margin="0,19.143,10,0" TextWrapping="Wrap" Text="Stop Sistem" VerticalAlignment="Top" Width="77.072" FontSize="20" FontWeight="Bold" TextAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin"/>
-            <!--<Button Grid.Row="0" Height="25" Width="150" Content="Button" x:Name="btn">
-                <Button.Triggers>
-                    <EventTrigger RoutedEvent="Button.Click" >
-                        <BeginStoryboard  Storyboard="{StaticResource ExpandGrid}">
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Button.Triggers>
-            </Button>-->
-            <Canvas Height="100" Width="100" Background="Orange" x:Name="cnv" Margin="457.503,0,466.496,236.548" VerticalAlignment="Bottom"/>
+            <Canvas>
+                <Rectangle Width="850" Height="100" Canvas.Left="10" Canvas.Top="385.563">
+                    <Rectangle.Fill>
+                        <DrawingBrush Viewport="0 0 0.1 1" TileMode="Tile"
+                           Viewbox="0 0 1 1" >
+                            <DrawingBrush.Drawing>
+                                <GeometryDrawing>
+
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup>
+                                            <RectangleGeometry Rect="0 0 100 100" />
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+
+                                    <GeometryDrawing.Brush>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="-1" Color="Tan" />
+                                            <GradientStop Offset="1.0" Color="Brown" />
+                                        </LinearGradientBrush>
+                                    </GeometryDrawing.Brush>
+
+                                    <GeometryDrawing.Pen>
+                                        <Pen Thickness="3" Brush="Black" />
+                                    </GeometryDrawing.Pen>
+
+                                </GeometryDrawing>
+                            </DrawingBrush.Drawing>
+                            <DrawingBrush.Transform>
+                                <TranslateTransform x:Name="xform" />
+                            </DrawingBrush.Transform>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Canvas>
+
+
 
         </Grid>
     </Viewbox>
