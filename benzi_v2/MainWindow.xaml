@@ -306,10 +306,17 @@
                 </TransformGroup>
             </Grid.RenderTransform>
             <Grid.Triggers>
+                <!--Stop All-->
+                <EventTrigger SourceName="S0_button" RoutedEvent="Button.Click">
+                    <StopStoryboard BeginStoryboardName="Banda1" />
+                    <StopStoryboard BeginStoryboardName="Banda2" />
+                    <StopStoryboard BeginStoryboardName="Banda3" />
+                </EventTrigger>
+                <!--Banda 1-->
                 <EventTrigger SourceName="S1_button" RoutedEvent="Button.Click">
-                    <BeginStoryboard Name="Conveyor">
+                    <BeginStoryboard Name="Banda1">
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="xform"
+                            <DoubleAnimation Storyboard.TargetName="banda1"
                             Storyboard.TargetProperty="X"
                             From="0" To="1000"
                             Duration="00:00:10"
@@ -318,7 +325,38 @@
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger SourceName="S6_button" RoutedEvent="Button.Click">
-                    <StopStoryboard BeginStoryboardName="Conveyor" />
+                    <PauseStoryboard BeginStoryboardName="Banda1" />
+                </EventTrigger>
+                <!--Banda 2-->
+                <EventTrigger SourceName="S2_button" RoutedEvent="Button.Click">
+                    <BeginStoryboard Name="Banda2">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="banda2"
+                            Storyboard.TargetProperty="X"
+                            From="0" To="1000"
+                            Duration="00:00:10"
+                            RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger SourceName="S7_button" RoutedEvent="Button.Click">
+                    <!--<StopStoryboard BeginStoryboardName="Banda2" />-->
+                    <PauseStoryboard BeginStoryboardName="Banda2" />
+                </EventTrigger>
+                <!--Banda 3-->
+                <EventTrigger SourceName="S3_button" RoutedEvent="Button.Click">
+                    <BeginStoryboard Name="Banda3">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="banda3"
+                            Storyboard.TargetProperty="X"
+                            From="0" To="1000"
+                            Duration="00:00:10"
+                            RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger SourceName="S8_button" RoutedEvent="Button.Click">
+                    <PauseStoryboard BeginStoryboardName="Banda3" />
                 </EventTrigger>
             </Grid.Triggers>
             <Canvas x:Name="Control" HorizontalAlignment="Right" Width="263.339" Margin="0,0,-17.626,0">
@@ -355,7 +393,15 @@
             <Button x:Name="INFO_button" Style="{StaticResource ResourceKey=InfoButton}" Content="Button" HorizontalAlignment="Left" Margin="863.722,0,0,10" VerticalAlignment="Bottom" Width="65.434" Height="65.434" BorderBrush="Black" Foreground="Black" FontFamily="Siemens Slab Black" FontSize="72" Click="INFO_button_Click"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Height="51.984" Margin="0,19.143,10,0" TextWrapping="Wrap" Text="Stop Sistem" VerticalAlignment="Top" Width="77.072" FontSize="20" FontWeight="Bold" TextAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin"/>
             <Canvas>
-                <Rectangle Width="850" Height="100" Canvas.Left="10" Canvas.Top="385.563">
+                <Rectangle Width="589.451" Height="100" Canvas.Left="-197.992" Canvas.Top="375.142" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-89.578"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
                     <Rectangle.Fill>
                         <DrawingBrush Viewport="0 0 0.1 1" TileMode="Tile"
                            Viewbox="0 0 1 1" >
@@ -382,7 +428,87 @@
                                 </GeometryDrawing>
                             </DrawingBrush.Drawing>
                             <DrawingBrush.Transform>
-                                <TranslateTransform x:Name="xform" />
+                                <TranslateTransform x:Name="banda1" />
+                            </DrawingBrush.Transform>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Width="589.451" Height="100" Canvas.Left="-57.313" Canvas.Top="379.349" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-89.578"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                    <Rectangle.Fill>
+                        <DrawingBrush Viewport="0 0 0.1 1" TileMode="Tile"
+                            Viewbox="0 0 1 1" >
+                            <DrawingBrush.Drawing>
+                                <GeometryDrawing>
+
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup>
+                                            <RectangleGeometry Rect="0 0 100 100" />
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+
+                                    <GeometryDrawing.Brush>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="-1" Color="Tan" />
+                                            <GradientStop Offset="1.0" Color="Brown" />
+                                        </LinearGradientBrush>
+                                    </GeometryDrawing.Brush>
+
+                                    <GeometryDrawing.Pen>
+                                        <Pen Thickness="3" Brush="Black" />
+                                    </GeometryDrawing.Pen>
+
+                                </GeometryDrawing>
+                            </DrawingBrush.Drawing>
+                            <DrawingBrush.Transform>
+                                <TranslateTransform x:Name="banda2" />
+                            </DrawingBrush.Transform>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Width="589.451" Height="100" Canvas.Left="93.786" Canvas.Top="379.349" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-89.578"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                    <Rectangle.Fill>
+                        <DrawingBrush Viewport="0 0 0.1 1" TileMode="Tile"
+                            Viewbox="0 0 1 1" >
+                            <DrawingBrush.Drawing>
+                                <GeometryDrawing>
+
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup>
+                                            <RectangleGeometry Rect="0 0 100 100" />
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+
+                                    <GeometryDrawing.Brush>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="-1" Color="Tan" />
+                                            <GradientStop Offset="1.0" Color="Brown" />
+                                        </LinearGradientBrush>
+                                    </GeometryDrawing.Brush>
+
+                                    <GeometryDrawing.Pen>
+                                        <Pen Thickness="3" Brush="Black" />
+                                    </GeometryDrawing.Pen>
+
+                                </GeometryDrawing>
+                            </DrawingBrush.Drawing>
+                            <DrawingBrush.Transform>
+                                <TranslateTransform x:Name="banda3" />
                             </DrawingBrush.Transform>
                         </DrawingBrush>
                     </Rectangle.Fill>
