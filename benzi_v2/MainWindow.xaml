@@ -282,21 +282,12 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Storyboard x:Key="OnTouchUp1"/>
-        <Storyboard x:Key="Movellipse" AutoReverse="True">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse">
-                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-213.623"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse">
-                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="93.786"/>
-            </DoubleAnimationUsingKeyFrames>
+        <Storyboard x:Key="ExpandGrid">
+
+            <DoubleAnimation Duration="00:00:20" From="1" To="450" Storyboard.TargetProperty="(Canvas.Width)" Storyboard.TargetName="cnv"/>
+
         </Storyboard>
     </Window.Resources>
-    <Window.Triggers>
-        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard Storyboard="{StaticResource Movellipse}"/>
-        </EventTrigger>
-    </Window.Triggers>
     <Window.Effect >
 
         <BlurEffect x:Name="blurEffect" x:FieldModifier="public" RenderingBias="Quality" Radius="0" />
@@ -321,7 +312,14 @@
                 <!--<Path x:Name="LampaH1" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="White" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="115.078" Width="30.568" Canvas.Left="-1.352"/>-->
                 <!--<Path Data="M208.292,0 L10,768" Fill="#FFF4F4F5" Height="788" Stretch="Fill" Stroke="#FF8BFF00" StrokeThickness="20" Canvas.Top="-10" Width="218.292" d:IsHidden="True"/>
                 <Path Data="M10,0 L198.292,758" Fill="#FFF4F4F5" Height="778" Stretch="Fill" Stroke="#FF8BFF00" StrokeThickness="20" Canvas.Top="-10" Width="208.292" d:IsHidden="True"/>-->
-                <Button x:Name="S0_button" Content="S0" Canvas.Left="74.856" Style="{DynamicResource MyButton}" Canvas.Top="10.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="Red" BorderBrush="#4CC50A0A" TouchDown="S0_button_TouchDown" TouchUp="S0_button_TouchUp"/>
+                <Button x:Name="S0_button" Content="S0" Canvas.Left="74.856" Style="{DynamicResource MyButton}" Canvas.Top="10.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="Red" BorderBrush="#4CC50A0A" TouchDown="S0_button_TouchDown" TouchUp="S0_button_TouchUp">
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click" >
+                            <BeginStoryboard  Storyboard="{StaticResource ExpandGrid}">
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                </Button>
                 <!--<TextBlock x:Name="textBlock1_Copy3" Height="25.903" TextWrapping="Wrap" Text="OFF" Width="36.842" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" Canvas.Left="121.154" Canvas.Top="39.743"/>-->
                 <Button x:Name="S1_button" Content="S1" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="104" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S1_button_TouchDown" TouchUp="S1_button_TouchUp" IsManipulationEnabled="True"/>
                 <!--<TextBlock x:Name="textBlock1_Copy5" Height="25.903" TextWrapping="Wrap" Width="33.919" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" RenderTransformOrigin="0.515,0.341" Canvas.Top="119.743" Text="H1" Canvas.Left="-40.271"/>-->
@@ -349,19 +347,16 @@
                 </TextBlock.Effect></TextBlock>
             <Button x:Name="INFO_button" Style="{StaticResource ResourceKey=InfoButton}" Content="Button" HorizontalAlignment="Left" Margin="863.722,0,0,10" VerticalAlignment="Bottom" Width="65.434" Height="65.434" BorderBrush="Black" Foreground="Black" FontFamily="Siemens Slab Black" FontSize="72" Click="INFO_button_Click"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Height="51.984" Margin="0,19.143,10,0" TextWrapping="Wrap" Text="Stop Sistem" VerticalAlignment="Top" Width="77.072" FontSize="20" FontWeight="Bold" TextAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin"/>
-            <Ellipse x:Name="ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Margin="93.785,0,0,236.548" Stroke="Black" Width="291.778" Height="130.258" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5">
-                <Ellipse.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Ellipse.RenderTransform>
-            </Ellipse>
+            <!--<Button Grid.Row="0" Height="25" Width="150" Content="Button" x:Name="btn">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click" >
+                        <BeginStoryboard  Storyboard="{StaticResource ExpandGrid}">
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>-->
+            <Canvas Height="100" Width="100" Background="Orange" x:Name="cnv" Margin="457.503,0,466.496,236.548" VerticalAlignment="Bottom"/>
 
         </Grid>
-
-
     </Viewbox>
 </Window>
