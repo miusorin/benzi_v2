@@ -395,15 +395,7 @@
             <Button x:Name="INFO_button" Style="{StaticResource ResourceKey=InfoButton}" Content="Button" HorizontalAlignment="Left" Margin="818.019,0,0,124.221" VerticalAlignment="Bottom" Width="65.434" Height="65.434" BorderBrush="Black" Foreground="Black" FontFamily="Siemens Slab Black" FontSize="72" Click="INFO_button_Click"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Height="51.984" Margin="0,19.143,10,0" TextWrapping="Wrap" Text="Stop Sistem" VerticalAlignment="Top" Width="77.072" FontSize="20" FontWeight="Bold" TextAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin"/>
             <Canvas Margin="0,0,250.713,0">
-                <Rectangle Width="589.451" Height="100" Canvas.Left="-197.992" Canvas.Top="375.142" RenderTransformOrigin="0.5,0.5">
-                    <Rectangle.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-89.578"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Rectangle.RenderTransform>
+                <Rectangle Width="589.451" Height="100" Canvas.Left="40.997" Canvas.Top="221.992" RenderTransformOrigin="0.5,0.5">
                     <Rectangle.Fill>
                         <DrawingBrush TileMode="Tile" Viewbox="0,0,1,1" Viewport="0,0,0.1,1">
                             <DrawingBrush.Drawing>
@@ -430,12 +422,12 @@
                         </DrawingBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <Rectangle Width="589.451" Height="100" Canvas.Left="-57.313" Canvas.Top="379.349" RenderTransformOrigin="0.5,0.5">
+                <Rectangle Width="589.451" Height="100" Canvas.Left="130.258" Canvas.Top="357.46" RenderTransformOrigin="0.5,0.5">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
-                            <RotateTransform Angle="-89.578"/>
+                            <RotateTransform Angle="-180"/>
                             <TranslateTransform/>
                         </TransformGroup>
                     </Rectangle.RenderTransform>
@@ -470,15 +462,7 @@
                         </DrawingBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <Rectangle Width="589.451" Height="100" Canvas.Left="93.786" Canvas.Top="379.349" RenderTransformOrigin="0.5,0.5">
-                    <Rectangle.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-89.578"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Rectangle.RenderTransform>
+                <Rectangle Width="589.451" Height="100" Canvas.Left="40.997" Canvas.Top="491.924" RenderTransformOrigin="0.5,0.5">
                     <Rectangle.Fill>
                         <DrawingBrush Viewport="0 0 0.1 1" TileMode="Tile"
                             Viewbox="0 0 1 1" >
