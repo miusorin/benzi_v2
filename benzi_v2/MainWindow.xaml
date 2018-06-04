@@ -7,6 +7,7 @@
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="benzi_v2.MainWindow"
         mc:Ignorable="d"
+        Icon="upb_icon.ico"
         Title="Miu Sorin-Cristian | MS11" Height="768" Width="1024" Closing="Window_Closing">
     <Window.Resources>
         <Style x:Key="MyButtonA" TargetType="{x:Type Button}">
