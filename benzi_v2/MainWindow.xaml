@@ -7,9 +7,9 @@
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="benzi_v2.MainWindow"
         mc:Ignorable="d"
-        Icon="upb_icon.ico"
         Title="Miu Sorin-Cristian | MS11" Height="768" Width="1024" Closing="Window_Closing">
     <Window.Resources>
+        
         <Style x:Key="MyButtonA" TargetType="{x:Type Button}">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
@@ -283,13 +283,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <!--<Storyboard x:Name="Conveyor1" x:Key="Conveyor">
-            <DoubleAnimation Storyboard.TargetName="xform"
-                            Storyboard.TargetProperty="X"
-                            From="0" To="1000"
-                            Duration="00:00:10"
-                            RepeatBehavior="Forever" />
-        </Storyboard>-->
+       
     </Window.Resources>
     <Window.Effect >
 
@@ -395,9 +389,6 @@
                 </TextBlock.Effect></TextBlock>
             <Button x:Name="INFO_button" Style="{StaticResource ResourceKey=InfoButton}" Content="Button" HorizontalAlignment="Left" Margin="818.019,0,0,124.221" VerticalAlignment="Bottom" Width="65.434" Height="65.434" BorderBrush="Black" Foreground="Black" FontFamily="Siemens Slab Black" FontSize="72" Click="INFO_button_Click"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Height="51.984" Margin="0,19.143,10,0" TextWrapping="Wrap" Text="Stop Sistem" VerticalAlignment="Top" Width="77.072" FontSize="20" FontWeight="Bold" TextAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin"/>
-            <TextBlock x:Name="textBlock_banda1" TextWrapping="Wrap" Text="Banda 1" FontSize="20" TextAlignment="Center" Margin="866,125,80,611" RenderTransformOrigin="0.458,0.21"/>
-            <TextBlock x:Name="textBlock_banda2" TextWrapping="Wrap" Text="Banda 2" FontSize="20" TextAlignment="Center" Margin="866,223,80,513"/>
-            <TextBlock x:Name="textBlock_banda3" TextWrapping="Wrap" Text="Banda 3" FontSize="20" TextAlignment="Center" Margin="866,323,80,413"/>
             <Canvas Margin="0,0,250.713,0">
                 <Rectangle Width="589.451" Height="100" Canvas.Left="40.997" Canvas.Top="221.992" RenderTransformOrigin="0.5,0.5">
                     <Rectangle.Fill>
@@ -498,6 +489,9 @@
                         </DrawingBrush>
                     </Rectangle.Fill>
                 </Rectangle>
+                <TextBlock x:Name="textBlock_banda1" Height="31.143" TextWrapping="Wrap" Text="Banda 1" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="125.166"/>
+                <TextBlock x:Name="textBlock_banda2" Height="31.143" TextWrapping="Wrap" Text="Banda 2" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="223.166"/>
+                <TextBlock x:Name="textBlock_banda3" Height="31.143" TextWrapping="Wrap" Text="Banda 3" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="323.166"/>
             </Canvas>
 
 
