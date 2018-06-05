@@ -9,7 +9,51 @@
         mc:Ignorable="d"
         Title="Miu Sorin-Cristian | MS11" Height="768" Width="1024" Closing="Window_Closing">
     <Window.Resources>
-
+        <!--Enable buttons story-->
+        <!--<Storyboard x:Key="SB_DisableButtons">
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S1_button">
+                <DiscreteBooleanKeyFrame Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S2_button">
+                <DiscreteBooleanKeyFrame Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S3_button">
+                <DiscreteBooleanKeyFrame Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S6_button">
+                <DiscreteBooleanKeyFrame Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S7_button">
+                <DiscreteBooleanKeyFrame Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S8_button">
+                <DiscreteBooleanKeyFrame Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="SB_EnableButtons">
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S1_button">
+                <DiscreteBooleanKeyFrame Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S2_button">
+                <DiscreteBooleanKeyFrame Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S3_button">
+                <DiscreteBooleanKeyFrame Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S6_button">
+                <DiscreteBooleanKeyFrame Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S7_button">
+                <DiscreteBooleanKeyFrame Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="S8_button">
+                <DiscreteBooleanKeyFrame Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
+        </Storyboard>-->
+        <!--End Enable buttons story-->
+        
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        
         <Style x:Key="MyButtonA" TargetType="{x:Type Button}">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
@@ -284,7 +328,18 @@
             </Setter>
         </Style>
 
+
     </Window.Resources>
+    <!--Enable buttons-->
+    <!--<Window.Triggers>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="S4_button">
+            <BeginStoryboard x:Name="SB_EnableButtons_BeginStoryboard" Storyboard="{StaticResource SB_EnableButtons}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Unchecked" SourceName="S4_button">
+            <BeginStoryboard x:Name="SB_DisableButtons_BeginStoryboard" Storyboard="{StaticResource SB_DisableButtons}"/>
+        </EventTrigger>
+    </Window.Triggers>-->
+    <!--End Enable buttons-->
     <Window.Effect >
 
         <BlurEffect x:Name="blurEffect" x:FieldModifier="public" RenderingBias="Quality" Radius="0" />
@@ -292,15 +347,15 @@
 
     <Viewbox Stretch="Uniform">
         <Grid x:Name="grid" Height="768" Width="1024" RenderTransformOrigin="0.5,0.5">
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Grid.RenderTransform>
             <Grid.Triggers>
+                <!--Enable buttons-->
+                <!--<EventTrigger RoutedEvent="Button.Click" SourceName="S4_button">
+                    <BeginStoryboard x:Name="SB_EnableButtons_BeginStoryboard" Storyboard="{StaticResource SB_EnableButtons}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Button.Click" SourceName="S4_button">
+                    <BeginStoryboard x:Name="SB_DisableButtons_BeginStoryboard" Storyboard="{StaticResource SB_DisableButtons}"/>
+                </EventTrigger>-->
+                <!--End Enable buttons-->
                 <!--Banda 1-->
                 <EventTrigger SourceName="S1_button" RoutedEvent="Button.Click">
                     <BeginStoryboard Name="Banda1">
@@ -360,23 +415,28 @@
                 <Path Data="M10,0 L198.292,758" Fill="#FFF4F4F5" Height="778" Stretch="Fill" Stroke="#FF8BFF00" StrokeThickness="20" Canvas.Top="-10" Width="208.292" d:IsHidden="True"/>-->
                 <Button x:Name="S0_button" Content="S0" Canvas.Left="74.856" Style="{DynamicResource MyButton}" Canvas.Top="10.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="Red" BorderBrush="#4CC50A0A" TouchDown="S0_button_TouchDown" TouchUp="S0_button_TouchUp"/>
                 <!--<TextBlock x:Name="textBlock1_Copy3" Height="25.903" TextWrapping="Wrap" Text="OFF" Width="36.842" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" Canvas.Left="121.154" Canvas.Top="39.743"/>-->
-                <Button x:Name="S1_button" Content="S1" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="104" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S1_button_TouchDown" TouchUp="S1_button_TouchUp"/>
+                <Button x:Name="S1_button" Content="S1" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="104" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S1_button_TouchDown" TouchUp="S1_button_TouchUp" IsEnabled="True"/>
                 <!--<TextBlock x:Name="textBlock1_Copy5" Height="25.903" TextWrapping="Wrap" Width="33.919" FontFamily="Siemens AD Sans" FontSize="24" TextAlignment="Center" RenderTransformOrigin="0.515,0.341" Canvas.Top="119.743" Text="H1" Canvas.Left="-40.271"/>-->
-                <Button x:Name="S2_button" Content="S2" Canvas.Left="9.999" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75.001" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S2_button_TouchDown" TouchUp="S2_button_TouchUp"/>
-                <Button x:Name="S3_button" Content="S3" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S3_button_TouchDown" TouchUp="S3_button_TouchUp"/>
-                <Button x:Name="S4_button" Content="S4" Canvas.Left="48.097" Style="{DynamicResource MyButton}" Canvas.Top="395.984" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S4_button_TouchDown" TouchUp="S4_button_TouchUp"/>
-                <Button x:Name="S5_button" Content="S5" Canvas.Left="48.097" Style="{DynamicResource MyButton}" Canvas.Top="475.984" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFFFB77B" BorderBrush="#4CFF8B00" TouchDown="S5_button_TouchDown" TouchUp="S5_button_TouchUp"/>
-                <Button x:Name="S6_button" Content="S6" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="103.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S6_button_TouchDown" TouchUp="S6_button_TouchUp"/>
-                <Button x:Name="S7_button" Content="S7" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S7_button_TouchDown" TouchUp="S7_button_TouchUp"/>
-                <Button x:Name="S8_button" Content="S8" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S8_button_TouchDown" TouchUp="S8_button_TouchUp"/>
-                <TextBlock x:Name="textBlock_banda3_Copy" Height="32" TextWrapping="Wrap" Text="Banda 3" Width="78" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="323.166"/>
+                <Button x:Name="S2_button" Content="S2" Canvas.Left="9.999" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75.001" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S2_button_TouchDown" TouchUp="S2_button_TouchUp" IsEnabled="True"/>
+                <Button x:Name="S3_button" Content="S3" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S3_button_TouchDown" TouchUp="S3_button_TouchUp" IsEnabled="True"/>
+                <Button x:Name="S4_button" Content="S4" Canvas.Left="34.557" Style="{DynamicResource MyButton}" Canvas.Top="395.984" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S4_button_TouchDown" TouchUp="S4_button_TouchUp"/>
+                <Button x:Name="S5_button" Content="S5" Canvas.Left="34.557" Style="{DynamicResource MyButton}" Canvas.Top="480.984" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFFFB77B" BorderBrush="#4CFF8B00" TouchDown="S5_button_TouchDown" TouchUp="S5_button_TouchUp"/>
+                <Button x:Name="S6_button" Content="S6" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="103.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S6_button_TouchDown" TouchUp="S6_button_TouchUp" IsEnabled="True"/>
+                <Button x:Name="S7_button" Content="S7" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S7_button_TouchDown" TouchUp="S7_button_TouchUp" IsEnabled="True"/>
+                <Button x:Name="S8_button" Content="S8" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S8_button_TouchDown" TouchUp="S8_button_TouchUp" IsEnabled="True"/>
 
-
+                <Button
+ Height="50" Width="50"
+ Style="{StaticResource MyButton}"
+ Command="{Binding SmallDisp}" CommandParameter="{Binding}" 
+Cursor="Hand" Visibility="{Binding Path=AdvancedFormat, Converter={StaticResource BoolToVis}}" Canvas.Left="-163.47" Canvas.Top="104"/>
+                
             </Canvas>
+
             <Button x:Name="HomeButton" Content="" Style="{DynamicResource HomeButton}" VerticalAlignment="Bottom" Width="65.434" Background="Black" Height="65.434" BorderBrush="#FFBB5353" Click="button_Click" Margin="0,0,41.551,124.221" HorizontalAlignment="Right"/>
             <Image x:Name="energ_png" Height="80" Canvas.Left="937.856" Source="energ.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,21.354,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
             <Image x:Name="upb_png" Height="80" Canvas.Left="802.388" Source="upb.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,127.826,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
-            <TextBlock x:Name="Titlu" Height="37.295" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="30" TextAlignment="Center" Background="White" Margin="0,10,326.795,0" VerticalAlignment="Top" Text="Sistem de simulare pentru conducerea proceselor energetice" RenderTransformOrigin="0.5,0.5">
+            <TextBlock x:Name="Titlu" Height="37.295" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="30" TextAlignment="Center" Background="White" Margin="10,10,316.795,0" VerticalAlignment="Top" Text="Sistem de simulare pentru conducerea proceselor energetice" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -493,10 +553,9 @@
                 <TextBlock x:Name="textBlock_banda1" Height="31.143" TextWrapping="Wrap" Text="Banda 1" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="125.166"/>
                 <TextBlock x:Name="textBlock_banda2" Height="31.143" TextWrapping="Wrap" Text="Banda 2" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="223.166"/>
                 <TextBlock x:Name="textBlock_banda3" Height="31.143" TextWrapping="Wrap" Text="Banda 3" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="323.166"/>
-                <TextBlock x:Name="textBlock_activare" Height="55" TextWrapping="Wrap" Text="Activare sistem" Width="102" FontSize="20" TextAlignment="Center" Canvas.Left="908" Canvas.Top="405"/>
-                <TextBlock x:Name="textBlock_buton_s5" Height="32" TextWrapping="Wrap" Text="TBA" Width="78" FontSize="20" TextAlignment="Center" Canvas.Left="919" Canvas.Top="509"/>
+                <TextBlock x:Name="textBlock_activare" Height="55" TextWrapping="Wrap" Text="Activare sistem" Width="102" FontSize="20" TextAlignment="Center" Canvas.Left="901.384" Canvas.Top="411.615"/>
+                <TextBlock x:Name="textBlock_buton_s5" Height="53.714" TextWrapping="Wrap" Text="Supraincarcare motor" Width="159.535" FontSize="20" TextAlignment="Center" Canvas.Left="877.423" Canvas.Top="505.4"/>
             </Canvas>
-
 
 
         </Grid>
