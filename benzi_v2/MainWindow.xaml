@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Miu Sorin-Cristian | MS11" Height="768" Width="1024" Closing="Window_Closing">
     <Window.Resources>
-        
+
         <Style x:Key="MyButtonA" TargetType="{x:Type Button}">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
@@ -283,7 +283,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-       
+
     </Window.Resources>
     <Window.Effect >
 
@@ -369,6 +369,7 @@
                 <Button x:Name="S6_button" Content="S6" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="103.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S6_button_TouchDown" TouchUp="S6_button_TouchUp"/>
                 <Button x:Name="S7_button" Content="S7" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S7_button_TouchDown" TouchUp="S7_button_TouchUp"/>
                 <Button x:Name="S8_button" Content="S8" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S8_button_TouchDown" TouchUp="S8_button_TouchUp"/>
+                <TextBlock x:Name="textBlock_banda3_Copy" Height="32" TextWrapping="Wrap" Text="Banda 3" Width="78" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="323.166"/>
 
 
             </Canvas>
@@ -492,6 +493,8 @@
                 <TextBlock x:Name="textBlock_banda1" Height="31.143" TextWrapping="Wrap" Text="Banda 1" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="125.166"/>
                 <TextBlock x:Name="textBlock_banda2" Height="31.143" TextWrapping="Wrap" Text="Banda 2" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="223.166"/>
                 <TextBlock x:Name="textBlock_banda3" Height="31.143" TextWrapping="Wrap" Text="Banda 3" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="323.166"/>
+                <TextBlock x:Name="textBlock_activare" Height="55" TextWrapping="Wrap" Text="Activare sistem" Width="102" FontSize="20" TextAlignment="Center" Canvas.Left="908" Canvas.Top="405"/>
+                <TextBlock x:Name="textBlock_buton_s5" Height="32" TextWrapping="Wrap" Text="TBA" Width="78" FontSize="20" TextAlignment="Center" Canvas.Left="919" Canvas.Top="509"/>
             </Canvas>
 
 
