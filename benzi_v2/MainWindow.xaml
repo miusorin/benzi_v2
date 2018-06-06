@@ -51,9 +51,9 @@
             </BooleanAnimationUsingKeyFrames>
         </Storyboard>-->
         <!--End Enable buttons story-->
-        
+
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
-        
+
         <Style x:Key="MyButtonA" TargetType="{x:Type Button}">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
@@ -424,19 +424,27 @@
                 <Button x:Name="S6_button" Content="S6" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="103.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S6_button_TouchDown" TouchUp="S6_button_TouchUp" IsEnabled="True"/>
                 <Button x:Name="S7_button" Content="S7" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S7_button_TouchDown" TouchUp="S7_button_TouchUp" IsEnabled="True"/>
                 <Button x:Name="S8_button" Content="S8" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S8_button_TouchDown" TouchUp="S8_button_TouchUp" IsEnabled="True"/>
+                <Path x:Name="LampaH1" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="Red" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="396" Width="30.568" Canvas.Left="-695.784"/>
+                <TextBlock x:Name="textBlock_lampah1" Height="32" TextWrapping="Wrap" Text="Stare Banda 1" Width="136" FontSize="20" TextAlignment="Center" Canvas.Left="-647" Canvas.Top="396"/>
+                <Path x:Name="LampaH2" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="Red" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="451.372" Width="30.568" Canvas.Left="-695.784"/>
+                <TextBlock x:Name="textBlock_lampah2" Height="32" TextWrapping="Wrap" Text="Stare Banda 2" Width="136" FontSize="20" TextAlignment="Center" Canvas.Left="-647" Canvas.Top="451"/>
+                <Path x:Name="LampaH3" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="Red" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="502.006" Width="30.568" Canvas.Left="-695.6"/>
+                <TextBlock x:Name="textBlock_lampah3" Height="32" TextWrapping="Wrap" Text="Stare Banda 3" Width="136" FontSize="20" TextAlignment="Center" Canvas.Left="-647" Canvas.Top="502"/>
+                <Path x:Name="LampaH4" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="Red" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="77.623" Width="30.568" Canvas.Left="-759.784"/>
+                <TextBlock x:Name="textBlock_sistem" Height="32" TextWrapping="Wrap" Text="Stare Sistem" Width="119" FontSize="20" TextAlignment="Center" Canvas.Left="-713" Canvas.Top="78"/>
 
-                <Button
+                <!--<Button
  Height="50" Width="50"
  Style="{StaticResource MyButton}"
  Command="{Binding SmallDisp}" CommandParameter="{Binding}" 
-Cursor="Hand" Visibility="{Binding Path=AdvancedFormat, Converter={StaticResource BoolToVis}}" Canvas.Left="-163.47" Canvas.Top="104"/>
-                
+Cursor="Hand" Visibility="{Binding Path=AdvancedFormat, Converter={StaticResource BoolToVis}}" Canvas.Left="-163.47" Canvas.Top="104"/>-->
+
             </Canvas>
 
             <Button x:Name="HomeButton" Content="" Style="{DynamicResource HomeButton}" VerticalAlignment="Bottom" Width="65.434" Background="Black" Height="65.434" BorderBrush="#FFBB5353" Click="button_Click" Margin="0,0,41.551,124.221" HorizontalAlignment="Right"/>
             <Image x:Name="energ_png" Height="80" Canvas.Left="937.856" Source="energ.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,21.354,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
             <Image x:Name="upb_png" Height="80" Canvas.Left="802.388" Source="upb.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,127.826,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
-            <TextBlock x:Name="Titlu" Height="37.295" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="30" TextAlignment="Center" Background="White" Margin="10,10,316.795,0" VerticalAlignment="Top" Text="Sistem de simulare pentru conducerea proceselor energetice" RenderTransformOrigin="0.5,0.5">
+            <TextBlock x:Name="Titlu" Height="37.295" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="30" TextAlignment="Center" Background="White" Margin="10,10,316.795,0" VerticalAlignment="Top" Text="Comanda automată a unui subsistem de benzi transportoare" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -451,7 +459,15 @@ Cursor="Hand" Visibility="{Binding Path=AdvancedFormat, Converter={StaticResourc
             <Button x:Name="INFO_button" Style="{StaticResource ResourceKey=InfoButton}" Content="Button" HorizontalAlignment="Left" Margin="818.019,0,0,124.221" VerticalAlignment="Bottom" Width="65.434" Height="65.434" BorderBrush="Black" Foreground="Black" FontFamily="Siemens Slab Black" FontSize="72" Click="INFO_button_Click"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Height="51.984" Margin="0,19.143,10,0" TextWrapping="Wrap" Text="Stop Sistem" VerticalAlignment="Top" Width="77.072" FontSize="20" FontWeight="Bold" TextAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin"/>
             <Canvas Margin="0,0,250.713,0">
-                <Rectangle Width="589.451" Height="100" Canvas.Left="40.997" Canvas.Top="221.992" RenderTransformOrigin="0.5,0.5">
+                <Rectangle Width="500" Height="90" Canvas.Left="71" Canvas.Top="139" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="360"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
                     <Rectangle.Fill>
                         <DrawingBrush TileMode="Tile" Viewbox="0,0,1,1" Viewport="0,0,0.1,1">
                             <DrawingBrush.Drawing>
@@ -478,12 +494,12 @@ Cursor="Hand" Visibility="{Binding Path=AdvancedFormat, Converter={StaticResourc
                         </DrawingBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <Rectangle Width="589.451" Height="100" Canvas.Left="130.258" Canvas.Top="357.46" RenderTransformOrigin="0.5,0.5">
+                <Rectangle Width="500" Height="90" Canvas.Left="366" Canvas.Top="343" RenderTransformOrigin="0.5,0.5">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
-                            <RotateTransform Angle="-180"/>
+                            <RotateTransform Angle="90"/>
                             <TranslateTransform/>
                         </TransformGroup>
                     </Rectangle.RenderTransform>
@@ -518,7 +534,15 @@ Cursor="Hand" Visibility="{Binding Path=AdvancedFormat, Converter={StaticResourc
                         </DrawingBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <Rectangle Width="589.451" Height="100" Canvas.Left="40.997" Canvas.Top="491.924" RenderTransformOrigin="0.5,0.5">
+                <Rectangle Width="500" Height="90" Canvas.Left="161" Canvas.Top="638" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
                     <Rectangle.Fill>
                         <DrawingBrush Viewport="0 0 0.1 1" TileMode="Tile"
                             Viewbox="0 0 1 1" >
@@ -555,7 +579,23 @@ Cursor="Hand" Visibility="{Binding Path=AdvancedFormat, Converter={StaticResourc
                 <TextBlock x:Name="textBlock_banda3" Height="31.143" TextWrapping="Wrap" Text="Banda 3" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="866.122" Canvas.Top="323.166"/>
                 <TextBlock x:Name="textBlock_activare" Height="55" TextWrapping="Wrap" Text="Activare sistem" Width="102" FontSize="20" TextAlignment="Center" Canvas.Left="901.384" Canvas.Top="411.615"/>
                 <TextBlock x:Name="textBlock_buton_s5" Height="53.714" TextWrapping="Wrap" Text="Supraincarcare motor" Width="159.535" FontSize="20" TextAlignment="Center" Canvas.Left="877.423" Canvas.Top="505.4"/>
+                <ed:BlockArrow Fill="#FFF4F4F5"  Height="68.198" Canvas.Left="234.464" Orientation="Right" Stroke="Black" Canvas.Top="234" Width="135.468"/>
+                <ed:BlockArrow Fill="#FFF4F4F5"  Height="135.096" Canvas.Left="489.769" Orientation="Down" Stroke="Black" Canvas.Top="349.091" Width="67.735"/>
+                <ed:BlockArrow Fill="#FFF4F4F5"  Height="67.734" Canvas.Left="328.249" Orientation="Left" Stroke="Black" Canvas.Top="567.924" Width="135.469"/>
+                <TextBlock x:Name="textBlock_banda1_1" Height="31.143" TextWrapping="Wrap" Text="Banda 1" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="256.466" Canvas.Top="252.914"/>
+                <TextBlock x:Name="textBlock_banda2_2" Height="31.143" TextWrapping="Wrap" Text="Banda 2" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="484.369" Canvas.Top="391.382" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="textBlock_banda3_3" Height="31.143" TextWrapping="Wrap" Text="Banda 3" Width="77.072" FontSize="20" TextAlignment="Center" Canvas.Left="379.192" Canvas.Top="586.374"/>
             </Canvas>
+
 
 
         </Grid>
