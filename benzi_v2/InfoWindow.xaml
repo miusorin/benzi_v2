@@ -67,9 +67,8 @@
 
     <Viewbox>
         <StackPanel Margin="0,0,0,-8" Height="361" Width="355.533">
-            <TabControl x:Name="tabControl" Height="312.544" Width="346.781" Margin="4.376,8,4.376,0" >
-                <TabItem x:Name="Prezentare" Header="Overview
-">
+            <TabControl x:Name="tabControl" Height="312.544" Width="346.781" Margin="4.376,8,4.376,0">
+                <TabItem x:Name="Prezentare" Header="Prezentare" Width="170">
                     <TabItem.Background>
                         <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                             <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -92,11 +91,10 @@
                             </RichTextBox.Resources>
                             <FlowDocument>
                                 <Paragraph>
-                                    <Run FontWeight="Bold" FontSize="20" Text="Placeholder Title"/>
+                                    <Run FontWeight="Bold" FontSize="20" Text="Comanda automată a unui subsistem de benzi transportoare"/>
                                 </Paragraph>
                                 <Paragraph>
-                                    <Run FontWeight="Bold" Text="Placeholder Subtitle"/>
-                                    <Run FontWeight="Bold" Text=":"/>
+                                    <Run FontWeight="Bold" Text="Miu Sorin Cristian | MS11"/>
                                 </Paragraph>
                                 <Paragraph>
                                     <Run Text="Placeholder Content"/>
@@ -111,7 +109,7 @@
                         </RichTextBox>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Signals' Adresses">
+                <TabItem Header="Adresele semnalelor" Width="170">
                     <Grid Background="White">
                         <RichTextBox x:Name="richTextBox_Copy" IsReadOnly="True"  Background="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                             ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -146,13 +144,13 @@
                         </RichTextBox>
                     </Grid>
                 </TabItem>
-                <TabItem Header="About" >
+                <!--<TabItem Header="Despre" >
                     <Grid>
                         <Button x:Name="button" Style="{StaticResource HomeButton}"  Content="Button" Height="100" Width="75" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" />
                         <TextBlock x:Name="textBlock" Height="23.377" Margin="90,50.432,68.437,0" TextWrapping="Wrap" Text="Back to Menu" VerticalAlignment="Top" FontSize="18"/>
 
                     </Grid>
-                </TabItem>
+                </TabItem>-->
             </TabControl>
             <Button Content="OK" Width="68" Height="25" Click="Button_Click" BorderBrush="{x:Null}" Background="#FFAEAEAE">
                 <Button.Effect>
