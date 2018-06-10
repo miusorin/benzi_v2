@@ -90,58 +90,126 @@
                                 </Style>
                             </RichTextBox.Resources>
                             <FlowDocument>
-                                <Paragraph>
-                                    <Run FontWeight="Bold" FontSize="20" Text="Comanda automată a unui subsistem de benzi transportoare"/>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="16" Text="Comanda automată a unui subsistem de benzi transportoare"/>
                                 </Paragraph>
-                                <Paragraph>
-                                    <Run FontWeight="Bold" Text="Miu Sorin Cristian | MS11"/>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" Text="Autor: "/>
+                                    <Run FontWeight="Bold" Text="I"/>
+                                    <Run FontWeight="Bold" Text="ng. "/>
+                                    <Run FontWeight="Bold" Text="Miu Sorin"/>
+                                    <Run FontWeight="Bold" Text="-"/>
+                                    <Run FontWeight="Bold" Text="Cristian"/>
                                 </Paragraph>
-                                <Paragraph>
-                                    <Run Text="Placeholder Content"/>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" Text="Conducător științific: Ș.l. dr. ing. Nicoleta Arghira"/>
                                 </Paragraph>
-                                <Paragraph>
-                                    <Run FontWeight="Bold" Text=""/>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" Text="Consultant științific: Ș.l. dr. ing. Vasile Calofir"/>
                                 </Paragraph>
-                                <Paragraph LineHeight="6">
-                                    <Run FontStretch="Expanded"/>
+                                <Paragraph TextAlignment="Justify" TextIndent="20">
+                                    <Run Text="Sistemul începe să funcționeze după apăsarea butonului principal de pornire S4; lampa H4 arată că sistemul"/>
+                                    <Run Text=" "/>
+                                    <Run Text="funcționează. Motoarele benzilor transportoare sunt comandate de contactele Q1, Q2, Q3 și pot fi pornite individual prin apăsarea butoanelor corespunzătoare S1, S2, S3. Becurile H1, H2, H3 indică starea de funcționare a fiecărei centuri. Nu este permisă pornirea unei benzi în timp ce următoarea este oprită"/>
+                                    <Run Text="."/>
+                                </Paragraph>
+                                <Paragraph TextAlignment="Justify" TextIndent="20">
+                                    <Run Text="Benzile pot fi oprite oricând apăsând butonul S0, ceea ce face ca întregul sistem să se oprească. Supraîncărcarea oricărui motor, simulată prin apăsarea butonului S5, are ca rezultat oprirea tuturor motoarelor (simulare echivalentă cu 3 relee de protecție NC conectate în serie)."/>
+                                </Paragraph>
+                                <Paragraph TextAlignment="Justify" TextIndent="20">
+                                    <Run Text="De asemenea, benzile pot fi oprite individual utilizând butoanele S6, S7, S8. Nu este permisă oprirea unei benzi transportoare în timp ce cea anterioară încă funcționează"/>
+                                    <Run Text="."/>
                                 </Paragraph>
                             </FlowDocument>
                         </RichTextBox>
+
                     </Grid>
+                    
                 </TabItem>
                 <TabItem Header="Adresele semnalelor" Width="170">
+                    
                     <Grid Background="White">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold">Nume</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold">Descriere</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold">Adresa logica</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">S0</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">Stop Sistem</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center">%I0.0</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center">S1</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">Pornire Banda 1</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center">%I0.1</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center">S2</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center">Pornire Banda 2</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center">%I0.2</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center">S3</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center">Pornire Banda 3</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center">%I0.3</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center">S4</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center">Pornire Sistem</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center">%I0.4</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Center">S5</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center">Simulare supraincarcare motor</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="6" HorizontalAlignment="Center">%I0.5</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center">S6</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center">Oprire Banda 1</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="7" HorizontalAlignment="Center">%I0.6</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="8" HorizontalAlignment="Center">S7</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="8" HorizontalAlignment="Center">Oprire Banda 2</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="8" HorizontalAlignment="Center">%I0.7</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="9" HorizontalAlignment="Center">S8</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="9" HorizontalAlignment="Center">Oprire Banda 3</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="9" HorizontalAlignment="Center">%I1.0</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="10" HorizontalAlignment="Center">H1</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="10" HorizontalAlignment="Center">Lampa indicare Banda 1</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="10" HorizontalAlignment="Center">%Q0.0</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="11" HorizontalAlignment="Center">H2</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="11" HorizontalAlignment="Center">Lampa indicare Banda 2</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="11" HorizontalAlignment="Center">%Q0.1</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="12" HorizontalAlignment="Center">H3</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="12" HorizontalAlignment="Center">Lampa indicare Banda 3</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="12" HorizontalAlignment="Center">%Q0.2</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="13" HorizontalAlignment="Center">H4</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="13" HorizontalAlignment="Center">Lampa indicare Sistem</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="13" HorizontalAlignment="Center">%Q0.3</TextBlock>
+
                         <RichTextBox x:Name="richTextBox_Copy" IsReadOnly="True"  Background="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                             ScrollViewer.VerticalScrollBarVisibility="Auto"
-                            ScrollViewer.CanContentScroll="True" BorderBrush="{x:Null}" BorderThickness="0,0,0,1"  >
+                            ScrollViewer.CanContentScroll="True" BorderBrush="{x:Null}" BorderThickness="0,0,0,1" Grid.ColumnSpan="4"  >
+
                             <RichTextBox.Resources>
                                 <Style TargetType="{x:Type ScrollBar}">
                                     <Setter Property="Width" Value="25"/>
 
                                 </Style>
                             </RichTextBox.Resources>
-                            <FlowDocument>
-                                <Paragraph LineHeight="6">
-                                    <Run FontStretch="Expanded"/>
-                                </Paragraph>
-                                <Paragraph LineHeight="6">
-                                    <Run FontWeight="Bold" FontStretch="Expanded" FontSize="20" Text="Placeholder Title"/>
-                                </Paragraph>
-                                <Paragraph LineHeight="6">
-                                    <Run FontStretch="Expanded"/>
-                                </Paragraph>
-                                <Paragraph LineHeight="1">
-                                    <Run FontStretch="Expanded" Text="Placeholder Content"/>
-                                    <Run FontStretch="Expanded" Text="&#x9;    "/>
-                                </Paragraph>
-                                <Paragraph LineHeight="6">
-                                    <Run FontStretch="Expanded"/>
-                                </Paragraph>
-                                <Paragraph LineHeight="6">
-                                    <Run FontStretch="Expanded"/>
-                                </Paragraph>
-                            </FlowDocument>
+                            <FlowDocument/>
                         </RichTextBox>
+                        <!--<Image x:Name="Tabel" Grid.ColumnSpan="2">
+                            <Image.Source>
+                                <BitmapImage UriSource="/Resources/Tabel-IO.png" />
+                            </Image.Source>
+                        </Image>-->
                     </Grid>
                 </TabItem>
                 <!--<TabItem Header="Despre" >
