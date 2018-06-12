@@ -72,7 +72,7 @@ namespace benzi_v2
         public MainWindow()
         {
             InitializeComponent();
-            //Conn();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!COMMENT FOR TEST ONLY!!!!!!!!!!
+            Conn();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!COMMENT FOR TEST ONLY!!!!!!!!!!
 
             timer = new Timer();
             timer.Tick += new EventHandler(refresh_values);
@@ -272,7 +272,7 @@ namespace benzi_v2
             int rInt = r.Next(0, 100);
             Get_DO();
             //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 5));
-            
+
         }
 
         private void S5_button_TouchUp(object sender, TouchEventArgs e)
