@@ -91,12 +91,11 @@
                             </RichTextBox.Resources>
                             <FlowDocument>
                                 <Paragraph TextAlignment="Center">
-                                    <Run FontWeight="Bold" FontSize="16" Text="Comanda automată a unui subsistem de benzi transportoare"/>
+                                    <Run FontWeight="Bold" FontSize="16" Text="Sistem de simulare pentru conducerea proceselor energetice"/>
                                 </Paragraph>
                                 <Paragraph TextAlignment="Center">
                                     <Run FontWeight="Bold" Text="Autor: "/>
-                                    <Run FontWeight="Bold" Text="I"/>
-                                    <Run FontWeight="Bold" Text="ng. "/>
+                                    <Run FontWeight="Bold" Text="Ing. "/>
                                     <Run FontWeight="Bold" Text="Miu Sorin"/>
                                     <Run FontWeight="Bold" Text="-"/>
                                     <Run FontWeight="Bold" Text="Cristian"/>

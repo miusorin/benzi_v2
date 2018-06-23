@@ -72,7 +72,7 @@ namespace benzi_v2
         public MainWindow()
         {
             InitializeComponent();
-            Conn();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!COMMENT FOR TEST ONLY!!!!!!!!!!
+            //Conn();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!COMMENT FOR TEST ONLY!!!!!!!!!!
 
             timer = new Timer();
             timer.Tick += new EventHandler(refresh_values);
@@ -80,18 +80,18 @@ namespace benzi_v2
 
 
         }
-        public void Conn()
-        {
-            modbusClient = new ModbusClient("172.16.17.2", 502);
-            modbusClient.Connect();
+        //public void Conn()
+        //{
+        //    modbusClient = new ModbusClient("172.16.17.2", 502);
+        //    modbusClient.Connect();
 
-            modbusClient.WriteSingleRegister(0x1120, 0);
-            modbusClient.WriteSingleRegister(2080, 0);
-            AI = modbusClient.ReadHoldingRegisters(1, 1);
-            DObits = new bool[] { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+        //    modbusClient.WriteSingleRegister(0x1120, 0);
+        //    modbusClient.WriteSingleRegister(2080, 0);
+        //    AI = modbusClient.ReadHoldingRegisters(1, 1);
+        //    DObits = new bool[] { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
 
-        }
+        //}
 
         //public void refresh_analogTEXT()
         //{

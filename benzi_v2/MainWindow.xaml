@@ -326,9 +326,9 @@
             </Canvas>
 
             <Button x:Name="HomeButton" Content="" Style="{DynamicResource HomeButton}" VerticalAlignment="Bottom" Width="65.434" Background="Black" Height="65.434" BorderBrush="#FFBB5353" Click="button_Click" Margin="0,0,41.551,124.221" HorizontalAlignment="Right"/>
-            <Image x:Name="energ_png" Height="80" Canvas.Left="937.856" Source="energ.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,21.354,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
-            <Image x:Name="upb_png" Height="80" Canvas.Left="802.388" Source="upb.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,127.826,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
-            <TextBlock x:Name="Titlu" Height="37.295" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="30" TextAlignment="Center" Background="White" Margin="10,10,316.795,0" VerticalAlignment="Top" Text="Comanda automată a unui subsistem de benzi transportoare" RenderTransformOrigin="0.5,0.5">
+            <Image x:Name="energ_png" Height="80" Canvas.Left="937.856" Source="Resources/energ.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,21.354,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
+            <Image x:Name="upb_png" Height="80" Canvas.Left="802.388" Source="Resources/upb.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,127.826,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
+            <TextBlock x:Name="Titlu" Height="37.295" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="30" TextAlignment="Center" Background="White" Margin="10,10,316.795,0" VerticalAlignment="Top" Text="Sistem de simulare pentru conducerea proceselor energetice" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

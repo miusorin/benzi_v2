@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\upb_icon.ico</ApplicationIcon>
+    <ApplicationIcon>upb_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>104B000E6244E4A1D8E8C5D952A00C39B5A460D8</ManifestCertificateThumbprint>
@@ -154,12 +154,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="energ.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="upb.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
@@ -173,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\upb_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="upb_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
