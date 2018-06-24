@@ -260,13 +260,43 @@
                             <DoubleAnimation Storyboard.TargetName="banda1"
                             Storyboard.TargetProperty="X"
                             From="0" To="1000"
-                            Duration="00:00:10"
+                            Duration="00:00:15"
                             RepeatBehavior="Forever" />
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH1"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Green"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S6_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S7_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S8_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger SourceName="S6_button" RoutedEvent="Button.Click">
                     <PauseStoryboard BeginStoryboardName="Banda1" />
+                </EventTrigger>
+                <EventTrigger SourceName="S6_button" RoutedEvent="Button.Click">
+                    <BeginStoryboard Name="Banda1_led">
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH1"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S7_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
                 </EventTrigger>
                 <!--Banda 2-->
                 <EventTrigger SourceName="S2_button" RoutedEvent="Button.Click">
@@ -275,13 +305,43 @@
                             <DoubleAnimation Storyboard.TargetName="banda2"
                             Storyboard.TargetProperty="X"
                             From="0" To="1000"
-                            Duration="00:00:10"
+                            Duration="00:00:15"
                             RepeatBehavior="Forever" />
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH2"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Green"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S1_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S7_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S8_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger SourceName="S7_button" RoutedEvent="Button.Click">
                     <PauseStoryboard BeginStoryboardName="Banda2" />
+                </EventTrigger>
+                <EventTrigger SourceName="S7_button" RoutedEvent="Button.Click">
+                    <BeginStoryboard Name="Banda2_led">
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH2"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S8_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
                 </EventTrigger>
                 <!--Banda 3-->
                 <EventTrigger SourceName="S3_button" RoutedEvent="Button.Click">
@@ -290,31 +350,131 @@
                             <DoubleAnimation Storyboard.TargetName="banda3"
                             Storyboard.TargetProperty="X"
                             From="0" To="1000"
-                            Duration="00:00:10"
+                            Duration="00:00:15"
                             RepeatBehavior="Forever" />
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH3"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Green"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S2_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S8_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger SourceName="S8_button" RoutedEvent="Button.Click">
                     <PauseStoryboard BeginStoryboardName="Banda3" />
                 </EventTrigger>
+                <EventTrigger SourceName="S8_button" RoutedEvent="Button.Click">
+                    <BeginStoryboard Name="Banda3_led">
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH3"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
                 <!--Stop All-->
                 <EventTrigger SourceName="S0_button" RoutedEvent="Button.Click">
                     <StopStoryboard BeginStoryboardName="Banda1" />
                     <StopStoryboard BeginStoryboardName="Banda2" />
                     <StopStoryboard BeginStoryboardName="Banda3" />
+                    <BeginStoryboard Name="Red_All">
+                        <Storyboard>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S1_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH1"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S2_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH2"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S3_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH3"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S6_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S7_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S8_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH4"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger SourceName="S4_button" RoutedEvent="Button.Click">
+                    <BeginStoryboard Name="Enable_System">
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH4"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Green"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <!--<BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S1_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S2_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>-->
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S3_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <!--<BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S6_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S7_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>-->
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S8_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                            </BooleanAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
                 </EventTrigger>
             </Grid.Triggers>
             <Canvas x:Name="Control" HorizontalAlignment="Right" Width="263.339" Margin="0,0,-17.626,0">
                 <Button x:Name="S0_button" Content="S0" Canvas.Left="74.856" Style="{DynamicResource MyButton}" Canvas.Top="10.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="Red" BorderBrush="#4CC50A0A" TouchDown="S0_button_TouchDown" TouchUp="S0_button_TouchUp"/>
-                <Button x:Name="S1_button" Content="S1" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="104" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S1_button_TouchDown" TouchUp="S1_button_TouchUp" IsEnabled="True"/>
-                <Button x:Name="S2_button" Content="S2" Canvas.Left="9.999" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75.001" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S2_button_TouchDown" TouchUp="S2_button_TouchUp" IsEnabled="True"/>
-                <Button x:Name="S3_button" Content="S3" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S3_button_TouchDown" TouchUp="S3_button_TouchUp" IsEnabled="True"/>
+                <Button x:Name="S1_button" Content="S1" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="104" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S1_button_TouchDown" TouchUp="S1_button_TouchUp" IsEnabled="False"/>
+                <Button x:Name="S2_button" Content="S2" Canvas.Left="9.999" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75.001" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S2_button_TouchDown" TouchUp="S2_button_TouchUp" IsEnabled="False"/>
+                <Button x:Name="S3_button" Content="S3" Canvas.Left="10" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S3_button_TouchDown" TouchUp="S3_button_TouchUp" IsEnabled="False"/>
                 <Button x:Name="S4_button" Content="S4" Canvas.Left="34.557" Style="{DynamicResource MyButton}" Canvas.Top="395.984" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFDAFFCC" BorderBrush="#4C2B9E00" TouchDown="S4_button_TouchDown" TouchUp="S4_button_TouchUp"/>
                 <Button x:Name="S5_button" Content="S5" Canvas.Left="34.557" Style="{DynamicResource MyButton}" Canvas.Top="480.984" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFFFB77B" BorderBrush="#4CFF8B00" TouchDown="S5_button_TouchDown" TouchUp="S5_button_TouchUp"/>
-                <Button x:Name="S6_button" Content="S6" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="103.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S6_button_TouchDown" TouchUp="S6_button_TouchUp" IsEnabled="True"/>
-                <Button x:Name="S7_button" Content="S7" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S7_button_TouchDown" TouchUp="S7_button_TouchUp" IsEnabled="True"/>
-                <Button x:Name="S8_button" Content="S8" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S8_button_TouchDown" TouchUp="S8_button_TouchUp" IsEnabled="True"/>
+                <Button x:Name="S6_button" Content="S6" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="103.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S6_button_TouchDown" TouchUp="S6_button_TouchUp" IsEnabled="False"/>
+                <Button x:Name="S7_button" Content="S7" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="198.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S7_button_TouchDown" TouchUp="S7_button_TouchUp" IsEnabled="False"/>
+                <Button x:Name="S8_button" Content="S8" Canvas.Left="164.019" Style="{DynamicResource MyButton}" Canvas.Top="299.5" Width="75" Height="75" FontFamily="Siemens AD Sans" FontSize="36" Background="#FFF79A9A" BorderBrush="#4CB00000" TouchDown="S8_button_TouchDown" TouchUp="S8_button_TouchUp" IsEnabled="False"/>
                 <Path x:Name="LampaH1" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="Red" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="396" Width="30.568" Canvas.Left="-695.784"/>
                 <TextBlock x:Name="textBlock_lampah1" Height="32" TextWrapping="Wrap" Text="Stare Banda 1" Width="136" FontSize="20" TextAlignment="Center" Canvas.Left="-647" Canvas.Top="396"/>
                 <Path x:Name="LampaH2" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="Red" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="451.372" Width="30.568" Canvas.Left="-695.784"/>
@@ -326,8 +486,8 @@
             </Canvas>
 
             <Button x:Name="HomeButton" Content="" Style="{DynamicResource HomeButton}" VerticalAlignment="Bottom" Width="65.434" Background="Black" Height="65.434" BorderBrush="#FFBB5353" Click="button_Click" Margin="0,0,41.551,124.221" HorizontalAlignment="Right"/>
-            <Image x:Name="energ_png" Height="80" Canvas.Left="937.856" Source="Resources/energ.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,21.354,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
-            <Image x:Name="upb_png" Height="80" Canvas.Left="802.388" Source="Resources/upb.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,127.826,10" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height"/>
+            <Image x:Name="energ_png" Height="80" Canvas.Left="937.856" Source="Resources/energ.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,21,10" VerticalAlignment="Bottom"/>
+            <Image x:Name="upb_png" Height="80" Canvas.Left="802.388" Source="Resources/upb.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,128,10" VerticalAlignment="Bottom"/>
             <TextBlock x:Name="Titlu" Height="37.295" TextWrapping="Wrap" FontFamily="Siemens AD Sans" FontSize="30" TextAlignment="Center" Background="White" Margin="10,10,316.795,0" VerticalAlignment="Top" Text="Sistem de simulare pentru conducerea proceselor energetice" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
