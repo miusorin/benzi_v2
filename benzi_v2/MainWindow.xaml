@@ -430,6 +430,7 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
+                <!--S4 button-->
                 <EventTrigger SourceName="S4_button" RoutedEvent="Button.Click">
                     <BeginStoryboard Name="Enable_System">
                         <Storyboard>
@@ -437,30 +438,70 @@
                                                           Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
                                 <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Green"/>
                             </ColorAnimationUsingKeyFrames>
-                            <!--<BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
-                                            Storyboard.TargetName="S1_button">
-                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
-                            </BooleanAnimationUsingKeyFrames>
-                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
-                                            Storyboard.TargetName="S2_button">
-                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
-                            </BooleanAnimationUsingKeyFrames>-->
                             <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
                                             Storyboard.TargetName="S3_button">
                                 <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
                             </BooleanAnimationUsingKeyFrames>
-                            <!--<BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
-                                            Storyboard.TargetName="S6_button">
-                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
-                            </BooleanAnimationUsingKeyFrames>
-                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
-                                            Storyboard.TargetName="S7_button">
-                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
-                            </BooleanAnimationUsingKeyFrames>-->
                             <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
                                             Storyboard.TargetName="S8_button">
                                 <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
                             </BooleanAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <!--S5 button-->
+                <EventTrigger SourceName="S5_button" RoutedEvent="Button.Click">
+                    <StopStoryboard BeginStoryboardName="Banda1" />
+                    <StopStoryboard BeginStoryboardName="Banda2" />
+                    <StopStoryboard BeginStoryboardName="Banda3" />
+                    <BeginStoryboard Name="Red_All_S5">
+                        <Storyboard>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S1_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH1"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S2_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH2"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S3_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH3"
+                                                          Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.0" Value="Red"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S6_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S7_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsEnabled"
+                                            Storyboard.TargetName="S8_button">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
+                            </BooleanAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="LampaH4"
+                                                      Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
+                                                      Duration="0:0:2"
+                                                      FillBehavior="HoldEnd"
+                                                      RepeatBehavior="Forever">
+                                <ColorAnimationUsingKeyFrames.KeyFrames>
+                                    <DiscreteColorKeyFrame KeyTime="0:0:0" Value="Red"/>
+                                    <DiscreteColorKeyFrame KeyTime="0:0:1" Value="Yellow"/>
+                                </ColorAnimationUsingKeyFrames.KeyFrames>
+                            </ColorAnimationUsingKeyFrames>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -484,7 +525,6 @@
                 <Path x:Name="LampaH4" Data="M29.067001,15.2835 C29.067001,22.895917 22.895917,29.067001 15.2835,29.067001 C7.6710833,29.067001 1.5,22.895917 1.5,15.2835 C1.5,7.6710833 7.6710833,1.5 15.2835,1.5 C22.895917,1.5 29.067001,7.6710833 29.067001,15.2835 z M24.920317,6.0096853 L6.2116885,24.718314 M24.920314,24.718311 L6.2116853,6.0096827" Fill="Red" Height="30.568" Stretch="Fill" Stroke="Black" StrokeThickness="3" Canvas.Top="77.623" Width="30.568" Canvas.Left="-759.784"/>
                 <TextBlock x:Name="textBlock_sistem" Height="32" TextWrapping="Wrap" Text="Stare Sistem" Width="119" FontSize="20" TextAlignment="Center" Canvas.Left="-713" Canvas.Top="78"/>
             </Canvas>
-
             <Button x:Name="HomeButton" Content="" Style="{DynamicResource HomeButton}" VerticalAlignment="Bottom" Width="65.434" Background="Black" Height="65.434" BorderBrush="#FFBB5353" Click="button_Click" Margin="0,0,41.551,124.221" HorizontalAlignment="Right"/>
             <Image x:Name="energ_png" Height="80" Canvas.Left="937.856" Source="Resources/energ.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,21,10" VerticalAlignment="Bottom"/>
             <Image x:Name="upb_png" Height="80" Canvas.Left="802.388" Source="Resources/upb.png" Stretch="Fill" Canvas.Top="666.92" Width="85" HorizontalAlignment="Right" Margin="0,0,128,10" VerticalAlignment="Bottom"/>
@@ -552,24 +592,20 @@
                             Viewbox="0 0 1 1" >
                             <DrawingBrush.Drawing>
                                 <GeometryDrawing>
-
                                     <GeometryDrawing.Geometry>
                                         <GeometryGroup>
                                             <RectangleGeometry Rect="0 0 100 100" />
                                         </GeometryGroup>
                                     </GeometryDrawing.Geometry>
-
                                     <GeometryDrawing.Brush>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                             <GradientStop Offset="-1" Color="Tan" />
                                             <GradientStop Offset="1.0" Color="LightGray" />
                                         </LinearGradientBrush>
                                     </GeometryDrawing.Brush>
-
                                     <GeometryDrawing.Pen>
                                         <Pen Thickness="3" Brush="Black" />
                                     </GeometryDrawing.Pen>
-
                                 </GeometryDrawing>
                             </DrawingBrush.Drawing>
                             <DrawingBrush.Transform>
@@ -592,24 +628,20 @@
                             Viewbox="0 0 1 1" >
                             <DrawingBrush.Drawing>
                                 <GeometryDrawing>
-
                                     <GeometryDrawing.Geometry>
                                         <GeometryGroup>
                                             <RectangleGeometry Rect="0 0 100 100" />
                                         </GeometryGroup>
                                     </GeometryDrawing.Geometry>
-
                                     <GeometryDrawing.Brush>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                             <GradientStop Offset="-1" Color="Tan" />
                                             <GradientStop Offset="1.0" Color="LightGray" />
                                         </LinearGradientBrush>
                                     </GeometryDrawing.Brush>
-
                                     <GeometryDrawing.Pen>
                                         <Pen Thickness="3" Brush="Black" />
                                     </GeometryDrawing.Pen>
-
                                 </GeometryDrawing>
                             </DrawingBrush.Drawing>
                             <DrawingBrush.Transform>

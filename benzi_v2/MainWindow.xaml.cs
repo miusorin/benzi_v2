@@ -12,108 +12,107 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using EasyModbus;
+using Modbus;
+using System.IO;
+using System.IO.Ports;
+using Modbus.Device;
 using System.Windows.Forms;
 using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Media.Animation;
-using Modbus.Device;
-using System.IO.Ports;
 
 namespace benzi_v2
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static bool info = false;//Functional Variables >TCP Modbus
-
-        SolidColorBrush blak = new SolidColorBrush(Colors.Black);
-        SolidColorBrush blu = new SolidColorBrush(Color.FromRgb(42, 172, 166));
-        SolidColorBrush whit = new SolidColorBrush(Colors.White);
-        SolidColorBrush darkgry = new SolidColorBrush(Color.FromRgb(68, 67, 67));
-
-        ushort U1Val = 0;
-
-
-        public int[] AI;
-        public int[] DI;
-        public int DO = 0;
+        //Declarare parametri DAQ
+        int[] DI2convert = { 0 };
         public bool[] DObits;
         public BitArray DIbits;
-        public ModbusClient modbusClient;
-        public Timer timer;
-        public bool Connected = false;//Functional Variables <
 
 
-        bool _force = false;//Functional Variables >RTU Modbus 
-
-        //public ushort[] AI;
-        //public ushort[] AO;
-        //public ushort DI;
-        //int[] DI2convert = { 0 };
-        //public ushort DO;
-        //public bool[] DObits;
-        //public BitArray DIbits;
-        //public SerialPort port;
-        //public Timer timer;
-        //public bool Connected = true;
         public byte SHJ_digital_slaveID = 10;
-        public byte SHJ_analog_slaveID = 11;
+
         public ushort SHJ_digital_inputReg = 100;
         public ushort SHJ_digital_outputReg = 102;
-        public ushort SHJ_analog_outputReg = 110;
-        public ushort SHJ_analog_inputReg = 100;//MAX = 4095 = 10 V
-        public IModbusSerialMaster modbus_master;//Functional Variables <
-        private object modbus_master_serial;
+        public SerialPort port;
+        public IModbusSerialMaster modbus_master;
+        ///////////
+
+
+        Timer timer1;
+        public static bool info = false;
+        public static int b0;
+        public static int b1;
+        public static int b2;
+        public static int b3;
+        public static int b4;
+        public static int b5;
+        public static int b6;
+        public static int b7;
+        public static int b8;
+
 
         public MainWindow()
         {
             InitializeComponent();
-            //Conn();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!COMMENT FOR TEST ONLY!!!!!!!!!!
 
-            timer = new Timer();
-            timer.Tick += new EventHandler(refresh_values);
-            timer.Interval = 10;
+            timer1 = new Timer();
+            timer1.Tick += new EventHandler(refreshValues);
+            timer1.Interval = 100;
 
+            LampaH1.Visibility = Visibility.Visible;
+            LampaH2.Visibility = Visibility.Visible;
+            LampaH3.Visibility = Visibility.Visible;
+            LampaH4.Visibility = Visibility.Visible;
 
+            ///
+            // Connect();
+            ///
         }
-        //public void Conn()
-        //{
-        //    modbusClient = new ModbusClient("172.16.17.2", 502);
-        //    modbusClient.Connect();
 
-        //    modbusClient.WriteSingleRegister(0x1120, 0);
-        //    modbusClient.WriteSingleRegister(2080, 0);
-        //    AI = modbusClient.ReadHoldingRegisters(1, 1);
-        //    DObits = new bool[] { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+        public void Connect()
+        {
+            try
+            {
+                port = new SerialPort("COM1");
+                port.BaudRate = 115200;
+                port.Parity = Parity.None;
+                port.StopBits = StopBits.One;
+                port.WriteTimeout = 500;
+                port.ReadTimeout = 500;
+                port.Handshake = Handshake.None;
+                port.Open();
 
+                ushort INIT_OUTPUT = 65535;
 
-        //}
+                modbus_master = ModbusSerialMaster.CreateRtu(port);
+                modbus_master.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, INIT_OUTPUT); //== all outputs are set LOW MAX = 65535
 
-        //public void refresh_analogTEXT()
-        //{
-        //    //U1 Text BlockS
-        //    modbus_master.WriteSingleRegister(SHJ_analog_slaveID, SHJ_analog_outputReg, U1Val);
+                timer1.Start();
+            }
+            catch
+            {
+                MessageBoxResult result =
+                    System.Windows.MessageBox.Show("Eroare conexiune. Redeschidem aplicatia?", "Confirmare",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    System.Windows.Forms.Application.Restart();
+                    Close();
+                }
+                if (result == MessageBoxResult.No)
+                {
 
-
-
-        //    if (U1Val == 10000 | U1Val > 10000)
-        //    {
-        //        HighVValue.Text = "10";
-        //        LowVValue.Text = "0";
-        //    }
-        //    else
-        //    {
-        //        HighVValue.Text = (U1Val / 1000).ToString();
-        //        LowVValue.Text = (U1Val % 1000).ToString();
-
-        //    }
-
-        //}
-
+                }
+            }
+        }
 
         private void Window_Closing(object sender, CancelEventArgs e) //MUST be MANUALLY linked
         {
@@ -135,58 +134,8 @@ namespace benzi_v2
                 e.Cancel = true;
             }
         }
-        //read Digital Outputs
-        public void Get_DO()
-        {
-            DO = modbusClient.ReadHoldingRegisters(2080, 1)[0];
-
-        }
-
-        //read Digital Inputs
-        public void Get_DI()
-        {
-            DI = modbusClient.ReadHoldingRegisters(32, 2);
-            DIbits = new BitArray(DI);
-        }
-
-        //setting Digital Outputs to HIGH
-        public void Set_DO(int bit)
-        {
-
-            Get_DO();
-
-            modbusClient.WriteSingleRegister(2080, DO + (2 ^ bit) - 2);
-
-        }
-
-        //setting Digital Outputs to LOW
-        public void Reset_DO(int bit_set)
-        {
-            Get_DO();
-            if (DO >= 0)
-            {
-                modbusClient.WriteSingleRegister(2080, DO - (2 ^ (bit_set - 1)));
-            }
-        }
-
-        public void refresh_values(object sender, EventArgs e)
-        {
-            //Show the current status of the PLC OUTPUTS(inputs for the program)
-            //No effect on the physical side if the OUTPUTS !!!only visual
-
-            Get_DI();
-            Get_DO();
-
-
-
-            AnimationControl();
-
-        }
-
 
         public void AnimationControl() { }
-
-        //private int rnd = random.Next(1, 3);
 
         private void button_Click(object sender, RoutedEventArgs e)//HomeButtonClick
         {
@@ -199,124 +148,356 @@ namespace benzi_v2
             {
                 var _infoWindow = new benzi_v2.InfoWindow();
                 _infoWindow.Show();
-                blurEffect.Radius = 10;
+                //_infoWindow.blurEffect.Radius = 10;
 
                 info = true;
 
             }
         }
 
+        //read Digital Outputs
+        public int Get_DO()
+        {
+            return 0;
+            ///
+         //  return (int) modbus_master.ReadHoldingRegisters(SHJ_digital_slaveID, SHJ_digital_outputReg, 1)[0];
+            ///
+        }
+
+        //read Digital Inputs
+        public int Get_DI()
+        {
+            int DI = modbus_master.ReadHoldingRegisters(SHJ_digital_slaveID, SHJ_digital_inputReg, 1)[0];
+            DI2convert[0] = DI;
+
+            DIbits = new BitArray(DI2convert);
+            DIbits.Not();
+
+            return DI;
+        }
+
+        private void setDOBit(int bit)
+        {
+            int DO = Get_DO();
+
+            int[] bits = Utils.decimalToBits(DO);
+
+            bits[15 - bit] = 0;
+
+            int newDO = Utils.bitsToDecimal(bits);
+            ///
+           // modbus_master.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(newDO));
+            ///
+        }
+
+        private void resetDOBit(int bit)
+        {
+            int DO = Get_DO();
+
+            int[] bits = Utils.decimalToBits(DO);
+
+            bits[15 - bit] = 1;
+
+            int newDO = Utils.bitsToDecimal(bits);
+            ///
+         //  modbus_master.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(newDO));
+            ///
+        }
+
+        public void CreateAPath()
+        {
+
+            // Create a blue and a black Brush
+
+            SolidColorBrush blueBrush = new SolidColorBrush();
+
+            blueBrush.Color = Colors.Blue;
+
+            SolidColorBrush blackBrush = new SolidColorBrush();
+
+            blackBrush.Color = Colors.Black;
+        }
+
         private void S0_button_TouchDown(object sender, TouchEventArgs e)
         {
-            Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 0));
+            if (b0 == 0)
+            {
+                b0 = 1;
+            }
+            else
+            {
+                b0 = 0;
+            }
         }
-        
+
         private void S0_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 0));
         }
 
         private void S1_button_TouchDown(object sender, TouchEventArgs e)
         {
-            Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 1));
+            if (b1 == 0)
+            {
+                b1 = 1;
+            }
+            else
+            {
+                b1 = 0;
+            }
         }
 
         private void S1_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 1));
         }
 
         private void S2_button_TouchDown(object sender, TouchEventArgs e)
         {
-            Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 2));
+            if (b2 == 0)
+            {
+                b2 = 1;
+            }
+            else
+            {
+                b2 = 0;
+            }
         }
 
         private void S2_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 2));
         }
 
         private void S3_button_TouchDown(object sender, TouchEventArgs e)
         {
-            Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 3));
+            if (b3 == 0)
+            {
+                b3 = 1;
+            }
+            else
+            {
+                b3 = 0;
+            }
         }
 
         private void S3_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 3));
         }
 
         private void S4_button_TouchDown(object sender, TouchEventArgs e)
         {
-            Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 4));
+            if (b4 == 0)
+            {
+                b4 = 1;
+            }
+            else
+            {
+                b4 = 0;
+            }
         }
 
         private void S4_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 4));
         }
 
         private void S5_button_TouchDown(object sender, TouchEventArgs e)
         {
             Random r = new Random();
-            int rInt = r.Next(0, 100);
-            Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 5));
+            int rInt = r.Next(1, 3);
+            if (b5 == 0)
+            {
+                b5 = rInt;
+            }
+            else
+            {
+                b5 = 0;
+            }
 
         }
 
         private void S5_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 5));
         }
 
         private void S6_button_TouchDown(object sender, TouchEventArgs e)
         {
-            Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 6));
+            if (b6 == 0)
+            {
+                b6 = 1;
+            }
+            else
+            {
+                b6 = 0;
+            }
         }
 
         private void S6_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 6));
         }
 
         private void S7_button_TouchDown(object sender, TouchEventArgs e)
         {
-            Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 7));
+            if (b7 == 0)
+            {
+                b7 = 1;
+            }
+            else
+            {
+                b7 = 0;
+            }
         }
 
         private void S7_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 7));
         }
 
         private void S8_button_TouchDown(object sender, TouchEventArgs e)
         {
-            Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 8));
+            if (b8 == 0)
+            {
+                b8 = 1;
+            }
+            else
+            {
+                b8 = 0;
+            }
         }
 
         private void S8_button_TouchUp(object sender, TouchEventArgs e)
         {
             Get_DO();
-            //modbus_master_serial.WriteSingleRegister(SHJ_digital_slaveID, SHJ_digital_outputReg, (ushort)(DO - 2 ^ 8));
         }
 
-        
+        private void refreshValues(object sender, EventArgs e)
+        {
+            Get_DI();
+            Get_DO();
+
+            if (b0 == 0)
+            {
+                resetDOBit(0);
+            }
+            if (b0 == 1)
+            {
+                setDOBit(0);
+            }
+
+            if (b1 == 0)
+            {
+                resetDOBit(1);
+            }
+            if (b1 == 1)
+            {
+                setDOBit(1);
+            }
+
+            if (b2 == 0)
+            {
+                resetDOBit(2);
+            }
+            if (b2 == 1)
+            {
+                setDOBit(2);
+            }
+
+            if (b3 == 0)
+            {
+                resetDOBit(3);
+            }
+            if (b3 == 1)
+            {
+                setDOBit(3);
+            }
+
+            if (b4 == 0)
+            {
+                resetDOBit(4);
+            }
+            if (b4 == 1)
+            {
+                setDOBit(4);
+            }
+
+            if (b5 == 0)
+            {
+                resetDOBit(5);
+            }
+            if (b5 == 1)
+            {
+                setDOBit(5);
+            }
+
+            if (b6 == 0)
+            {
+                resetDOBit(6);
+            }
+            if (b6 == 1)
+            {
+                setDOBit(6);
+            }
+
+            if (b7 == 0)
+            {
+                resetDOBit(7);
+            }
+            if (b7 == 1)
+            {
+                setDOBit(7);
+            }
+
+            if (b8 == 0)
+            {
+                resetDOBit(8);
+            }
+            if (b8 == 1)
+            {
+                setDOBit(8);
+            }
+
+            if (DIbits[1])
+            {
+                LampaH1.Fill = Brushes.Green;
+            }
+            if (!DIbits[1])
+            {
+                LampaH1.Fill = Brushes.Red;
+            }
+
+            if (DIbits[2])
+            {
+                LampaH2.Fill = Brushes.Green;
+            }
+            if (!DIbits[2])
+            {
+                LampaH2.Fill = Brushes.Red;
+            }
+
+            if (DIbits[3])
+            {
+                LampaH3.Fill = Brushes.Green;
+            }
+            if (!DIbits[3])
+            {
+                LampaH3.Fill = Brushes.Red;
+            }
+
+            if (DIbits[0])
+            {
+                LampaH4.Fill = Brushes.Green;
+            }
+            if (!DIbits[0])
+            {
+                LampaH4.Fill = Brushes.Red;
+            }
+
+        }
+
+
     }
 }

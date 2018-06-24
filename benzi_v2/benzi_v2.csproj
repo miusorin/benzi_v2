@@ -100,6 +100,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utils.cs" />
     <Page Include="copy-black-interface-symbol-of-two-paper-sheets.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -143,7 +144,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="benzi_v2_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -176,6 +176,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\upb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\EasyModbus.dll" />
+    <Content Include="Resources\Modbus.dll" />
+    <Content Include="Resources\Modbus.Extensions.dll" />
+    <Content Include="Resources\NModbus4.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
